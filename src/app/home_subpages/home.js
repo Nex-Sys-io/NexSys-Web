@@ -18,14 +18,14 @@ export default function Home() {
       <div className="home-container">
         {/* Profile Picture Section */}
         <div className="section__pic-container" data-aos="fade-right">
-          <img src="./profile-pic.PNG" alt="Darsh Patel's Profile Picture" />
+          <img src="./Nexsys.PNG" alt="Darsh Patel's Profile Picture" />
         </div>
         
         {/* Text Section */}
         <div className="section__text" data-aos="fade-left">
-          <p className="section__text__p1 light-mode-text">Hello, I'm</p>
-          <h1 className="title">Darsh Patel</h1>
-          <p className="section__text__p2 light-mode-text">Computer Science Undergrad</p>
+          <p className="section__text__p1 light-mode-text">Hello, we are</p>
+          <h1 className="title">Nexsys</h1>
+          <p className="section__text__p2 light-mode-text">A SaaS Company</p>
 
           {/* Button Container */}
           <div className="btn-container">
