@@ -1,12 +1,11 @@
 "use client";
 
-import "../css/change.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
 import SectionTitle from "../components/title";
 
-export default function Change() {
+export default function Tracks() {
     useEffect(() => {
         AOS.init({
             duration: 1200,
@@ -25,14 +24,4 @@ export default function Change() {
             </div>
         );
     }
-
-    return (
-        <div className="change-page">
-            <div className="change-content">
-                <div className="change-section-title light-mode-text" data-aos="fade-up"> 
-                    <SectionTitle title="CHANGE" />
-                </div>
-            </div>
-        </div>
-    );
 }
