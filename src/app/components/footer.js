@@ -30,18 +30,24 @@ export default function Footer() {
         <div className="footer-page">
             <div className="footer-content" data-aos="fade-in">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
-                    <Track title="TWITTER" link="https://x.com/darsh623">
+                    <Track title="TWITTER" link="https://x.com/NexsysTech">
                         <img src="/twitter.png" alt="twitter-png" className="track-image"/>
                     </Track>
-                    <Track title="INSTAGRAM" link="https://www.instagram.com/darsh._.p">
-                        <img src="/instagram.png" alt="insta-png" className="track-image"/>
+                    <Track title="INSTAGRAM" link="https://www.instagram.com/nexsys.tech/">
+                        <img src="/instagram.png" alt="instagram-png" className="track-image"/>
                     </Track>
                     <Track title="GITHUB" link="https://github.com/darshp623/react-intro-ws">
                         <img src="/github.PNG" alt="github-png" className="track-image"/>
                     </Track>
+                    <Track title="TIKTOK" link="https://www.tiktok.com/@nexsys.tech?lang=en">
+                        <img src="/tiktok.webp" alt="tiktok-webp" className="track-image"/>
+                    </Track>
+                    <Track title="REDDIT" link="https://www.reddit.com/user/Nexsys_Tech/">
+                        <img src="/reddit.png" alt="reddit-png" className="track-image"/>
+                    </Track>
                 </div>
                 <div className="footer-info">
-                    <p>&copy; 2024 [insert name]. All Rights Reserved.</p>
+                    <p>&copy; 2025 NexSys. All Rights Reserved.</p>
                     <p className="mt-2">
                       <a href="#" className="footer-link">Privacy Policy</a> |
                       <a href="#" className="footer-link">Terms of Service</a> |

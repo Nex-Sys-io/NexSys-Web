@@ -1,50 +1,45 @@
 "use client";
-import "../css/home.css";
 import { useEffect} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
   return (
-    <div className="home-page" style={{ background: "radial-gradient(125% 125% at 50% 10%, #000 40%, rgb(0, 155, 227) 100%)",}}>
-      <div className="home-container">
-        {/* Profile Picture Section */}
-        <div className="section__pic-container" data-aos="fade-right">
-          <img src="./Nexsys.PNG" alt="Darsh Patel's Profile Picture" />
-        </div>
-        
-        {/* Text Section */}
-        <div className="section__text" data-aos="fade-left">
-          <p className="section__text__p1 light-mode-text">Hello, we are</p>
-          <h1 className="title">Nexsys</h1>
-          <p className="section__text__p2 light-mode-text">A SaaS Company</p>
+    <div className="min-h-screen bg-black text-white bg-gradient-to-l from-pink-500 via-black to-blue-500 dark:bg-gradient-to-l dark:from-pink-500 dark:to-blue-500">
+      <header className="flex justify-between items-center p-6 bg-black/70">
+        <div className="text-3xl font-bold">NexSys</div>
+        <nav className="hidden md:flex gap-4">
+          <a href="#about" className="hover:text-blue-400">About</a>
+          <a href="#projects" className="hover:text-blue-400">Projects</a>
+          <a href="#contact" className="hover:text-blue-400">Contact</a>
+        </nav>
+      </header>
 
-          {/* Button Container */}
-          <div className="btn-container">
-            <button className="btn btn-color-1" onClick={() => window.open('./assets/resume.pdf')}>
-              Download CV
-            </button>
-            <button className="btn btn-color-2" onClick={() => location.href = './#contact'}>
-              Contact Info
-            </button>
-          </div>
+      <section className="flex flex-col items-center justify-center text-center py-20">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6">NexSys Tech</h1>
+        <p className="text-xl max-w-2xl mb-10">Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.</p>
+        <button className="px-8 py-4 bg-blue-500 rounded-full hover:bg-blue-600">Get Started</button>
+      </section>
 
-          {/* Social Links */}
-          <div id="socials-container">
-            <img src="./linkedin.png" alt="LinkedIn" className="icon" onClick={() => window.open('https://www.linkedin.com/in/darshp623/')}/>
-            <img src="./github.PNG" alt="GitHub" className="icon" onClick={() => window.open('https://github.com/darshp623/')}/>
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8">What We Offer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Custom AI Solutions</h3>
+              <p>We tailor AI technologies to meet your specific business needs and challenges.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Scalable SaaS Products</h3>
+              <p>Our software solutions are built for growth and scalability, ensuring long-term value.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Expert Support</h3>
+              <p>We provide continuous support to ensure smooth implementation and operation.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
-
