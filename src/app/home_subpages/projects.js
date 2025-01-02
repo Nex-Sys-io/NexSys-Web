@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 export default function Projects() {
     const [view, setView] = React.useState("products");
     return (
-      <div className="min-h-screen bg-black text-white bg-gradient-to-l from-pink-500 via-black to-blue-500 dark:bg-gradient-to-l dark:from-pink-500 dark:to-blue-500">
+        <div className="min-h-screen bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
       <section className="py-20 max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-10">Projects</h1>
         <div className="flex justify-center gap-4 mb-10">
