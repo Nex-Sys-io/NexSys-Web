@@ -21,7 +21,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header className="navbar fixed top-0 w-full z-50 bg-black/30 text-white">
+    <header className="navbar fixed top-0 w-full z-50 text-white">
       <div className="flex justify-between items-center px-8 py-6">
         {/* Left side (Brand Name) */}
         <div className="nav-left">
