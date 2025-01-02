@@ -24,9 +24,11 @@ export default function Footer() {
             </div>
           </a>
         );
-    }
+    }   
 
     return (
+        <div className="bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
+        <header className="flex justify-between items-center px-8 py-6 bg-black/30">
         <div className="footer-page">
             <div className="footer-content" data-aos="fade-in">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
@@ -56,5 +58,7 @@ export default function Footer() {
                 </div>
             </div>
         </div>
+        </header>
+    </div>
     )
 };

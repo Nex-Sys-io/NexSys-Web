@@ -1,27 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../css/navbar.css";
+import "../css/Navbar.css";
 import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // handle resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
-    // Initial check on component mount
-    handleResize();
-
-    // Add event listener for resize events
+    handleResize(); // Check initially
     window.addEventListener("resize", handleResize);
-
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -30,79 +21,61 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <>
-      <div className="nav-bar-container w-full flex justify-center py-2.5 light-mode-text">
-        <nav className="nav-desktop light-mode-text">
-          <div className="nav-left">
-            <Link
-              offset={-300}
-              duration={700}
-              smooth="true"
-              href="#home"
-            >
-              <img className="nav-logo light-mode-text" src="react-logo.webp" alt="logo" />
-            </Link>
-            <Link
-              id="left-nav-button"
-              to="placeholder"
-              smooth="true"
-              duration={500}
-              className="nav-link light-mode-text"
-              href="#placeholder"
-            >
-              Placeholder
-            </Link>
-            <Link
-              id="left-nav-button"
-              to="placeholder"
-              offset={0}
-              smooth="true"
-              duration={500}
-              className="nav-link light-mode-text"
-              href="#"
-            >
-              Placeholder
-            </Link>
-            <Link
-              id="left-nav-button"
-              to="placeholder"
-              offset={0}
-              smooth="true"
-              duration={500}
-              className="nav-link light-mode-text"
-              href="#"
-            >
-              Placeholder
-            </Link>
-          </div>
-
-          <div className="nav-right light-mode-text">
-            {/* Add any additional right-side links or buttons here */}
-          </div>
-        </nav>
-        {/*hamburger menu*/}
-        <div id="hamburger-nav" className="hamburger-menu">
-          <div
-            className={`hamburger-icon ${isMenuOpen ? "open" : ""} light-mode-text`}
-            onClick={toggleMenu}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul className={`menu-links ${isMenuOpen ? "open" : ""} light-mode-text`}>
-            <li>
-              <Link href="#placeholder" className="light-mode-text">Placeholder</Link>
-            </li>
-            <li>
-              <Link href="#placeholder" className="light-mode-text">Placeholder</Link>
-            </li>
-            <li>
-              <Link href="#placeholder" className="light-mode-text">Placeholder</Link>
-            </li>
-          </ul>
+    <header className="navbar fixed top-0 w-full z-50 bg-black/30 text-white">
+      <div className="flex justify-between items-center px-8 py-6">
+        {/* Left side (Brand Name) */}
+        <div className="nav-left">
+          <h1 className="text-2xl font-bold uppercase">NexSys</h1>
         </div>
+
+        {/* Desktop Navigation Links (hidden on mobile) */}
+        {!isMobile && (
+          <nav className="nav-right hidden md:flex gap-8">
+            <Link href="#about" className="nav-link hover:text-blue-400">
+              About
+            </Link>
+            <Link href="#projects" className="nav-link hover:text-blue-400">
+              Projects
+            </Link>
+            <Link href="#contact" className="nav-link hover:text-blue-400">
+              Contact
+            </Link>
+          </nav>
+        )}
+
+        {/* Hamburger Menu (shown on mobile) */}
+        {isMobile && (
+          <div className="hamburger-menu">
+            <div
+              className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            {isMenuOpen && (
+              <ul className="menu-links absolute top-16 right-0 bg-black/80 text-white shadow-md p-4 rounded-md">
+                <li className="mb-2">
+                  <Link href="#about" onClick={toggleMenu}>
+                    About
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link href="#projects" onClick={toggleMenu}>
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#contact" onClick={toggleMenu}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        )}
       </div>
-    </>
+    </header>
   );
 }
