@@ -21,11 +21,11 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header className="navbar fixed top-0 w-full z-50 bg-black/20 text-white">
+    <header className="navbar fixed top-0 w-full z-50 text-white">
       <div className="flex justify-between items-center px-8 py-6">
         {/* Left side (Brand Name) */}
         <div className="nav-left">
-          <h1 className="text-2xl font-bold uppercase">NexSys</h1>
+          <h1 className="text-2xl font-bold">NexSys</h1>
         </div>
 
         {/* Desktop Navigation Links (hidden on mobile) */}
