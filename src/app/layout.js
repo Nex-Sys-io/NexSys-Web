@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/Nexsys.PNG" type="image/png" sizes="64x64"/>
+        <link rel="icon" href="/Nexsys.png" type="image/png" sizes="64x64"/>
       </head>
       <body className={inter.className}>{children}</body>
     </html>

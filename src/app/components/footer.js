@@ -1,24 +1,14 @@
 "use client";
 import "../css/footer.css";
-import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-import { useEffect } from 'react';
 import SectionTitle from "../components/title";
 
 export default function Footer() {
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1400,
-            easing: 'ease-in-out',
-            once: true,
-        });
-    }, []);
-
     function Track({ title, link, children }) {
         return (
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <div className="track-item" data-aos="fade-in">
+            <div className="track-item">
                 {children}
                 <h1 className="track-title">{title}</h1>
             </div>
@@ -30,7 +20,7 @@ export default function Footer() {
         <div className="bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
         <header className="flex justify-between items-center px-8 py-6 bg-black/30">
         <div className="footer-page">
-            <div className="footer-content" data-aos="fade-in">
+            <div className="footer-content">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
                     <Track title="TWITTER" link="https://x.com/NexsysTech">
                         <img src="/twitter.png" alt="twitter-png" className="track-image"/>
