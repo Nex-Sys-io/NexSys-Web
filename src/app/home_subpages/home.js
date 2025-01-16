@@ -1,5 +1,5 @@
 "use client";
-import "aos/dist/aos.css";
+import "../css/home.css";
 
 export default function Home() {
   return (
@@ -10,7 +10,9 @@ export default function Home() {
         <p className="text-xl max-w-2xl mb-8">
           Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
         </p>
-        <button className="px-8 py-4 bg-blue-500 rounded-full hover:bg-blue-600">
+        <button
+          type="get-started"
+          className="btn-custom transform transition-transform duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-500">
           Get Started
         </button>
       </section>
@@ -19,15 +21,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">What We Offer</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 p-8 rounded-lg hover:shadow-lg">
+            <div className="box-custom">
               <h3 className="text-xl font-bold mb-4">Custom AI Solutions</h3>
               <p>We tailor AI technologies to meet your specific business needs and challenges.</p>
             </div>
-            <div className="bg-gray-800 p-8 rounded-lg hover:shadow-lg">
+            <div className="box-custom">
               <h3 className="text-xl font-bold mb-4">Scalable SaaS Products</h3>
               <p>Our software solutions are built for growth and scalability, ensuring long-term value.</p>
             </div>
-            <div className="bg-gray-800 p-8 rounded-lg hover:shadow-lg">
+            <div className="box-custom">
               <h3 className="text-xl font-bold mb-4">Expert Support</h3>
               <p>We provide continuous support to ensure smooth implementation and operation.</p>
             </div>
@@ -37,4 +39,3 @@ export default function Home() {
     </div>
   );
 }
-
