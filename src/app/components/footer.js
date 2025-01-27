@@ -17,8 +17,14 @@ export default function Footer() {
     }   
 
     return (
-        <div className="bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
-        <header className="flex justify-between items-center px-8 py-6 bg-black/30">
+        <div
+        className="text-white"
+        style={{
+          background:
+            "radial-gradient(125% 125% at 50% 10%, #004d40 0%, #000 40%, #00695c 70%, #000 100%)",
+        }}
+      >
+        <header className="flex justify-between items-center px-8 py-6">
         <div className="footer-page">
             <div className="footer-content">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
@@ -43,7 +49,7 @@ export default function Footer() {
                     <p className="mt-2">
                       <a href="#" className="footer-link">Privacy Policy</a> |
                       <a href="#" className="footer-link">Terms of Service</a> |
-                      <a href="mailto:dpatel37@umbc.edu" className="footer-link">Contact Me</a>
+                      <a href="mailto:dpatel37@umbc.edu" className="footer-link">Contact Us</a>
                     </p>
                 </div>
             </div>

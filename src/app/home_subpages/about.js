@@ -2,7 +2,13 @@
 
 export default function About() {
     return (
-        <div className="min-h-screen bg-black text-white bg-gradient-to-l from-pink-500 via-black to-blue-500 dark:bg-gradient-to-l dark:from-pink-500 dark:to-blue-500">
+              <div
+              className="min-h-screen text-white"
+              style={{
+                background:
+                  "radial-gradient(125% 125% at 50% 90%, #004d40 0%, #000 40%, #00695c 70%, #000 100%)",
+              }}
+            >
             <section className="py-20 max-w-5xl mx-auto">
                 <h1 className="text-5xl font-bold text-center mb-10">About NexSys</h1>
                 <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>

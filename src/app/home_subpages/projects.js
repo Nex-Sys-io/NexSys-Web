@@ -6,7 +6,13 @@ import "../css/projects.css";
 export default function Projects() {
     const [view, setView] = React.useState("products");
     return (
-    <div className="min-h-screen bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
+      <div
+      className="min-h-screen text-white"
+      style={{
+        background:
+          "radial-gradient(125% 125% at 50% 10%, #004d40 0%, #000 40%, #00695c 70%, #000 100%)",
+      }}
+    >
       <section className="py-20 max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-10">Projects</h1>
         <div className="flex justify-center gap-4 mb-10">
@@ -18,7 +24,7 @@ export default function Projects() {
         </button>
         <button
           onClick={() => setView("services")}
-          className={`btn-custom ${view === "services" ? "" : "opacity-50"}`}
+          className={`btn-custom2 ${view === "services" ? "" : "opacity-50"}`}
         >
           Services
         </button>
@@ -27,7 +33,7 @@ export default function Projects() {
         {view === "products" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-gray-800 p-4 rounded-lg hover:shadow-lg">
-            <div className="h-48 bg-blue-300 rounded mb-4"></div>
+            <div className="h-48 bg-green-100 rounded mb-4"></div>
             <h3 className="text-xl font-bold">Project Title</h3>
             <p className="mt-2">Short project description goes here.</p>
           </div>
@@ -36,7 +42,7 @@ export default function Projects() {
         {view === "services" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-gray-800 p-4 rounded-lg hover:shadow-lg">
-            <div className="h-48 bg-blue-300 rounded mb-4"></div>
+            <div className="h-48 bg-green-100 rounded mb-4"></div>
             <h3 className="text-xl font-bold">Project Title 2</h3>
             <p className="mt-2">Another project description goes here.</p>
           </div>

@@ -7,14 +7,14 @@
     height: auto; /* Allow auto height for responsiveness */
     min-height: 3rem; /* Ensure a minimum height */
     border-radius: 2rem;
-    border: 0.1rem solid transparent;
+    border: 0.2rem solid transparent;
     border-color: #ffffff;
     z-index: 0;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #1d95ea, #2dc5f0); /* Pink to Blue Gradient */
+    background: linear-gradient(to right, #0b4912, #23b43b);
     text-align: center; /* Center text inside the button */
     font-size: 1rem; /* Adjust font size for better visibility */
   }
@@ -46,13 +46,14 @@
     overflow: hidden;
     font-weight: 600;
     transition: all 300ms ease;
-    padding: 2rem; /* More padding for larger box content */
-    border-radius: 12px; /* Softer corners for boxes */
-    border: 0.1rem solid transparent;
+    padding: 2rem; /* more padding for larger box content */
+    border-radius: 12px; /* softer corners for boxes */
+    border: 0.25rem solid transparent;
     border-color: #ffffff;
-    background: #060c53; /* Blue gradient */
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15),
-                inset 0 0 10px rgba(255, 255, 255, 0.1); /* Subtle glow effect */
+    background: #051901; /* blue gradient */
+    box-shadow: 0 4px 30px rgba(255, 255, 255, .3), /* Outer soft glow */
+    0 0 20px rgba(255, 255, 255, 0.2),  /* Middle stronger glow */
+    inset 0 0 15px rgba(255, 255, 255, 0.2); /* Inner glow */
     color: white;
     text-align: center;
   }

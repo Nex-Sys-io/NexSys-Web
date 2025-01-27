@@ -3,7 +3,13 @@ import "../css/home.css";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white bg-gradient-to-l from-blue-500 via-black to-pink-500 dark:bg-gradient-to-l dark:from-blue-500 dark:to-pink-500">
+      <div
+        className="min-h-screen text-white"
+        style={{
+          background:
+            "radial-gradient(125% 125% at 50% 10%, #004d40 0%, #000 40%, #00695c 70%, #000 100%)",
+        }}
+      >
       {/* Add padding to avoid navbar overlap */}
       <section className="flex flex-col items-center justify-center text-center py-16 pt-32">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-12">NexSys Tech</h1>

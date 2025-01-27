@@ -7,14 +7,14 @@
     height: 3rem;
     width: 7rem;
     border-radius: 2rem;
-    border: 0.1rem solid transparent;
+    border: 0.2rem solid transparent;
     border-color: #ffffff;
     z-index: 0;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #1d95ea, #2dc5f0);
+    background: linear-gradient(to right, #0b4912, #23b43b);
   }
   
   .btn-custom2::before {
@@ -40,7 +40,7 @@
   }
 
   .bg-gray-800 {
-    background-color: rgb(30, 30, 60); /* Dark blue background */
+    background-color: rgb(3, 27, 13); /* Dark blue background */
     border: 3px solid rgb(255, 255, 255); /* White glowing border */
     box-shadow: 0 0 10px rgba(255, 255, 255); /* Subtle glow */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
