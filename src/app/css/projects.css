@@ -8,13 +8,13 @@
     width: 7rem;
     border-radius: 2rem;
     border: 0.2rem solid transparent;
-    border-color: #ffffff;
+    border-color: #00ff59;
     z-index: 0;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0b4912, #23b43b);
+    background: white;
   }
   
   .btn-custom2::before {
@@ -37,6 +37,8 @@
     color: white;
     transform: scale(1.05);
     cursor: pointer;
+    background: #1c685e;
+    border-color: #ffffff;
   }
 
   .bg-gray-800 {

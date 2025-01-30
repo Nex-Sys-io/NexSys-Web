@@ -22,7 +22,8 @@
   }
   
   .nav-right .nav-link:hover {
-    color: #93c5fd;
+    color: #037958;
+    scale: 1.1;
   }
   
   /* Hamburger Menu */

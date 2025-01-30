@@ -3,20 +3,20 @@
     overflow: hidden;
     font-weight: 600;
     transition: all 300ms ease;
-    padding: .75rem 1.5rem; /* Adjust padding for better line height */
-    height: auto; /* Allow auto height for responsiveness */
-    min-height: 3rem; /* Ensure a minimum height */
+    padding: .75rem 1.5rem; 
+    height: auto; 
+    min-height: 3rem; /* min height */
     border-radius: 2rem;
     border: 0.2rem solid transparent;
-    border-color: #ffffff;
+    border-color: #00ff59;
     z-index: 0;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0b4912, #23b43b);
-    text-align: center; /* Center text inside the button */
-    font-size: 1rem; /* Adjust font size for better visibility */
+    background: white;
+    text-align: center; /* center text inside the button */
+    font-size: 1rem; 
   }
   
   .btn-custom::before {
@@ -39,6 +39,8 @@
     color: white;
     transform: scale(1.05);
     cursor: pointer;
+    background: #1c685e;
+    border-color: #ffffff;
   }
 
   .box-custom {
@@ -50,10 +52,10 @@
     border-radius: 12px; /* softer corners for boxes */
     border: 0.25rem solid transparent;
     border-color: #ffffff;
-    background: #051901; /* blue gradient */
-    box-shadow: 0 4px 30px rgba(255, 255, 255, .3), /* Outer soft glow */
-    0 0 20px rgba(255, 255, 255, 0.2),  /* Middle stronger glow */
-    inset 0 0 15px rgba(255, 255, 255, 0.2); /* Inner glow */
+    background: #020c01; 
+    box-shadow: 0 4px 30px rgba(255, 255, 255, .3), 
+    0 0 20px rgba(255, 255, 255, 0.2),  
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
     color: white;
     text-align: center;
   }
