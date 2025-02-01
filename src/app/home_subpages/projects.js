@@ -28,7 +28,7 @@ const projects = {
     {
       title: "Bisyn MVP",
       description:
-        "Most Valuable Product for Bisyn.",
+        "Minimum Viable Product for Bisyn.",
       image: "/bisyn.png",
       tags: ["IoT", "TensorFlow", "Time Series", "Azure"],
       link: "#",
