@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="/about"
+              href="#about"
               className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
                 theme === 'dark' 
                   ? 'text-gray-100 after:bg-blue-400' 
@@ -56,7 +56,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/projects"
+              href="#projects"
               className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
                 theme === 'dark' 
                   ? 'text-gray-100 after:bg-blue-400' 
@@ -66,7 +66,7 @@ export default function Navbar() {
               Projects
             </Link>
             <Link
-              href="/contact"
+              href="#contact"
               className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
                 theme === 'dark' 
                   ? 'text-gray-100 after:bg-blue-400' 
@@ -142,21 +142,21 @@ export default function Navbar() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
               <Link
-                href="/about"
+                href="#about"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
                 onClick={toggleMenu}
               >
                 About
               </Link>
               <Link
-                href="/projects"
+                href="#projects"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
                 onClick={toggleMenu}
               >
                 Projects
               </Link>
               <Link
-                href="/contact"
+                href="#contact"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
                 onClick={toggleMenu}
               >

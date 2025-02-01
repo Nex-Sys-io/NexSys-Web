@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 
 const socialLinks = [
-  { title: "TWITTER", link: "https://x.com/NexsysTech", icon: "/twitter.png" },
-  { title: "INSTAGRAM", link: "https://www.instagram.com/nexsys.tech/", icon: "/instagram.png" },
-  { title: "GITHUB", link: "https://github.com/darshp623/react-intro-ws", icon: "/github.PNG" },
-  { title: "TIKTOK", link: "https://www.tiktok.com/@nexsys.tech?lang=en", icon: "/tiktok.webp" },
-  { title: "REDDIT", link: "https://www.reddit.com/user/Nexsys_Tech/", icon: "/reddit.png" }
+  { title: "Twitter", link: "https://x.com/NexsysTech", icon: "/twitter.png" },
+  { title: "Instagram", link: "https://www.instagram.com/nexsys.tech/", icon: "/instagram.png" },
+  { title: "GitHub", link: "https://github.com/darshp623/react-intro-ws", icon: "/github.PNG" },
+  { title: "TikTok", link: "https://www.tiktok.com/@nexsys.tech?lang=en", icon: "/tiktok.webp" },
+  { title: "Reddit", link: "https://www.reddit.com/user/Nexsys_Tech/", icon: "/reddit.png" }
 ];
 
 function SocialLink({ link, icon, title }) {
@@ -20,17 +20,18 @@ function SocialLink({ link, icon, title }) {
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className={`p-3 rounded-lg transition-colors duration-200 ${
-        theme === 'dark'
-          ? 'hover:bg-gray-800'
-          : 'hover:bg-gray-100'
-      }`}
+      className="flex flex-col items-center space-y-2 p-3 rounded-lg transition-colors duration-200"
     >
       <img 
         src={icon} 
         alt={`${title} icon`} 
         className="w-10 h-10 object-contain filter hover:brightness-125" 
       />
+      <span className={`text-sm font-medium ${
+        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+      }`}>
+        {title}
+      </span>
     </motion.a>
   );
 }

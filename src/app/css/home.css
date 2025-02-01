@@ -50,7 +50,7 @@
     transition: all 300ms ease;
     padding: 2rem; /* more padding for larger box content */
     border-radius: 12px; /* softer corners for boxes */
-    border: 0.25rem solid transparent;
+    border: 0.1rem solid transparent;
     border-color: #ffffff;
     background: #020c01; 
     box-shadow: 0 4px 30px rgba(255, 255, 255, .3), 

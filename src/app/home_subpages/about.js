@@ -64,7 +64,7 @@ function TeamMember({ member, index }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className={`p-6 rounded-xl border ${
+        className={`p-6 rounded-xl border-[1.5px] ${
           theme === 'dark'
             ? 'bg-gray-800/50 hover:bg-gray-800/80 border-white'
             : 'bg-white hover:bg-gray-50 border-black'

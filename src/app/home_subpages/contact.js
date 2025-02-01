@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import { useState } from "react";
 
-// Contact Us Page Component
 export default function Contact() {
   const { theme } = useTheme();
   const [formData, setFormData] = useState({
@@ -18,15 +17,13 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setSubmitStatus('success');
+
+    // Simulate a submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setSubmitStatus("success");
     setIsSubmitting(false);
     setFormData({ name: "", email: "", subject: "", message: "" });
-    
-    // Reset status after 3 seconds
     setTimeout(() => setSubmitStatus(null), 3000);
   };
 
@@ -37,13 +34,15 @@ export default function Contact() {
     }));
   };
 
+  // Updated contact info with modern icons
   const contactInfo = [
     {
       title: "Email",
-      value: "contact@nexsys.tech",
+      value: "nexsys.tech.ai@gmail.com",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4 4h16v16H4z" fill="none" />
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z" />
         </svg>
       )
     },
@@ -51,147 +50,132 @@ export default function Contact() {
       title: "Location",
       value: "Baltimore, MD",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.1 2 5 5.1 5 9c0 4.5 7 13 7 13s7-8.5 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
         </svg>
       )
     },
     {
       title: "Phone",
-      value: "+1 (443) 123-4567",
+      value: "+1 (443) 840-0170",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.64.58 1 1 0 011 1v3.54a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.54a1 1 0 011 1 11.72 11.72 0 00.58 3.64 1 1 0 01-.27 1.11l-2.23 2.24z"/>
         </svg>
       )
     }
   ];
 
-  const inputClasses = `mt-1 block w-full rounded-md shadow-sm border ${
-    theme === 'dark'
-      ? 'bg-gray-800 border-white/20 text-white focus:border-white'
-      : 'bg-white border-gray-200 text-gray-900 focus:border-gray-900'
-  } focus:ring-2 focus:ring-offset-2 ${
-    theme === 'dark' 
-      ? 'focus:ring-white focus:ring-offset-gray-900' 
-      : 'focus:ring-gray-900 focus:ring-offset-white'
+  // Minimal input styling that adapts to the theme
+  const inputClasses = `mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 ${
+    theme === "dark"
+      ? "border-gray-600 focus:ring-white text-white placeholder-gray-400"
+      : "border-gray-300 focus:ring-gray-900 text-gray-900 placeholder-gray-500"
   }`;
 
   return (
-    <div className={`min-h-screen pt-20 ${
-      theme === 'dark'
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900'
-        : 'bg-gradient-to-b from-gray-50 via-white to-gray-50'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+    <div
+      className={`min-h-screen py-12 px-4 sm:px-6 lg:px-8 ${
+        theme === "dark" ? "bg-gray-900" : "bg-gray-50"
+      }`}
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Page Header */}
+        <div className="text-center mb-12">
+          <h1 className={`text-4xl md:text-5xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Get in Touch
           </h1>
-          <p className={`text-xl max-w-2xl mx-auto ${
-            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            Have a question or want to work together? We'd love to hear from you.
+          <p className={`mt-4 text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>
+            Interested in learning more? We'd love to connect with you.
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Panel: Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
+            className={`flex flex-col justify-center rounded-xl p-8 shadow-2xl ${
+              theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"
+            }`}
           >
-            <div className="space-y-8">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className={`flex items-center space-x-4 p-6 rounded-lg ${
-                    theme === 'dark'
-                      ? 'bg-gray-800/50 border border-white/20'
-                      : 'bg-white border border-gray-200'
-                  } shadow-lg`}
-                >
-                  <div className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>
+            <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+            <p className="mb-8 text-lg">
+              Reach out through any of the platforms below or send us a message directly.
+            </p>
+            <div className="space-y-4">
+              {contactInfo.map((info) => (
+                <div key={info.title} className="flex items-center space-x-4">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700">
                     {info.icon}
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold ${
-                      theme === 'dark' ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      {info.title}
-                    </h3>
-                    <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
-                      {info.value}
-                    </p>
+                    <h3 className="text-lg font-semibold">{info.title}</h3>
+                    <p className="text-sm">{info.value}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right Panel: Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8"
           >
+            <h2 className={`text-3xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+              Contact Us
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className={`block text-sm font-medium ${
-                    theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                  }`}
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className={inputClasses}
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className={`block text-sm font-medium ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your name"
+                    className={inputClasses}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className={`block text-sm font-medium ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="you@example.com"
+                    className={inputClasses}
+                  />
+                </div>
               </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className={`block text-sm font-medium ${
-                    theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                  }`}
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className={inputClasses}
-                />
-              </div>
-
               <div>
                 <label
                   htmlFor="subject"
                   className={`block text-sm font-medium ${
-                    theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
+                    theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
                   Subject
@@ -203,15 +187,15 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  placeholder="Subject"
                   className={inputClasses}
                 />
               </div>
-
               <div>
                 <label
                   htmlFor="message"
                   className={`block text-sm font-medium ${
-                    theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
+                    theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
                   Message
@@ -219,39 +203,38 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
+                  rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className={inputClasses}
-                />
+                  placeholder="Your message..."
+                  className={`${inputClasses} resize-none`}
+                ></textarea>
               </div>
-
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-3 px-4 rounded-md font-medium ${
-                  isSubmitting
-                    ? 'bg-gray-400 text-white'
-                    : theme === 'dark'
-                      ? 'bg-white text-gray-900 hover:bg-gray-200'
-                      : 'bg-gray-900 text-white hover:bg-gray-800'
-                } transition-colors duration-200`}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </motion.button>
-
-              {submitStatus === 'success' && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-green-500 text-center"
+              <div>
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
+                    isSubmitting
+                      ? "bg-gray-400 text-white cursor-not-allowed"
+                      : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                  }`}
                 >
-                  Message sent successfully!
-                </motion.p>
-              )}
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </motion.button>
+                {submitStatus === "success" && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="mt-4 text-green-500 text-center"
+                  >
+                    Message sent successfully!
+                  </motion.p>
+                )}
+              </div>
             </form>
           </motion.div>
         </div>

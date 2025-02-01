@@ -113,8 +113,8 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className={`p-6 rounded-xl ${
                     theme === 'dark'
-                      ? 'bg-gray-800/50 border-[3px] border-white'
-                      : 'bg-white border-[3px] border-black'
+                      ? 'bg-gray-800/50 border-[1.5px] border-white'
+                      : 'bg-white border-[1.5px] border-black'
                   } shadow-lg hover:shadow-xl transition-all duration-300 text-center`}
                 >
                   <div className="flex justify-center">{item.icon}</div>
