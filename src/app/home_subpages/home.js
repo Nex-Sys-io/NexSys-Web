@@ -13,10 +13,10 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen ${
+    <div className={`min-h-screen py-12 px-4 sm:px-6 lg:px-8 ${
       theme === 'dark' 
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white' 
-        : 'bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-900'
+        ? 'bg-gray-900 text-white' 
+        : 'bg-gray-50 text-gray-900'
     }`}>
       {/* Main Section */}
       <section className="relative pt-32">

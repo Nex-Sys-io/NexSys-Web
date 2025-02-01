@@ -126,11 +126,11 @@ export default function About() {
 
   return (
     <div className={`min-h-screen pt-20 ${
-      theme === 'dark'
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900'
-        : 'bg-gradient-to-b from-gray-50 via-white to-gray-50'
+      theme === 'dark' 
+        ? 'bg-gray-900 text-white' 
+        : 'bg-gray-50 text-gray-900'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
         {/* Mission Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export default function About() {
           <p className={`text-xl max-w-3xl mx-auto ${
             theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            At NexSys, we're committed to revolutionizing the tech industry through innovative AI solutions and cutting-edge software development. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.
+            At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.
           </p>
         </motion.div>
 

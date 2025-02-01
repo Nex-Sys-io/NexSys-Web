@@ -102,9 +102,9 @@ export default function Projects() {
 
   return (
     <div className={`min-h-screen pt-20 ${
-      theme === 'dark'
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900'
-        : 'bg-gradient-to-b from-gray-50 via-white to-gray-50'
+      theme === 'dark' 
+        ? 'bg-gray-900 text-white' 
+        : 'bg-gray-50 text-gray-900'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
@@ -121,9 +121,7 @@ export default function Projects() {
             theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
           }`}>
             Explore our diverse range of projects, from innovative products to cutting-edge services. 
-            Each project reflects our commitment to excellence in design, development, and problem-solving. 
-            Whether it's AI-powered solutions, software applications, or custom-built platforms, our work is 
-            focused on delivering impact and driving technology forward.
+            Each project reflects our commitment to excellence in design, development, and problem-solving.
           </p>
         </motion.div>
 

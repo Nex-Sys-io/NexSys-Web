@@ -96,7 +96,7 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
             className={`flex flex-col justify-center rounded-xl p-8 shadow-2xl ${
-              theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"
+              theme === "dark" ? "bg-gray-800/50 text-white" : "bg-gray-100 text-gray-900"
             }`}
           >
             <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
@@ -123,7 +123,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8"
+            className="bg-white dark:bg-gray-800/50 rounded-xl shadow-2xl p-8"
           >
             <h2 className={`text-3xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Contact Us
