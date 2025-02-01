@@ -25,9 +25,9 @@ function SocialLink({ link, icon, title }) {
       <img 
         src={icon} 
         alt={`${title} icon`} 
-        className="w-10 h-10 object-contain filter hover:brightness-125" 
+        className="w-8 h-8 sm:w-10 sm:h-10 object-contain filter hover:brightness-125" 
       />
-      <span className={`text-sm font-medium ${
+      <span className={`text-xs sm:text-sm font-medium ${
         theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
       }`}>
         {title}
@@ -41,24 +41,20 @@ export default function Footer() {
   
   return (
     <footer className={`${
-      theme === 'dark'
-        ? 'bg-gray-900/30 text-white'
-        : 'bg-white text-gray-900'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-8">
-          <div className="flex justify-center items-center space-x-6">
-            {socialLinks.map((social) => (
-              <SocialLink key={social.title} {...social} />
-            ))}
-          </div>
-          <div className="mt-4 text-center">
-            <p className={`text-sm ${
-              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-            }`}>
-              &copy; {new Date().getFullYear()} NexSys. All rights reserved.
-            </p>
-          </div>
+      theme === 'dark' ? 'bg-gray-900/30 text-white' : 'bg-white text-gray-900'
+    } w-full py-6 px-4 sm:px-6 lg:px-8`}> 
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-6">
+          {socialLinks.map((social) => (
+            <SocialLink key={social.title} {...social} />
+          ))}
+        </div>
+        <div className="mt-4 text-center">
+          <p className={`text-xs sm:text-sm ${
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          }`}>
+            &copy; {new Date().getFullYear()} NexSys. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
