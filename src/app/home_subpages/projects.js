@@ -101,81 +101,83 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("Products");
 
   return (
-    <div className={`min-h-screen pt-20 ${
+    <div className={`${
       theme === 'dark' 
-        ? 'bg-gray-900 text-white' 
-        : 'bg-gray-50 text-gray-900'
+        ? 'bg-gray-900/0 text-white' 
+        : 'bg-gray-50/50 text-gray-900'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
-        >
-          <h1 className={`text-4xl md:text-5xl font-bold mb-8 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
-            Our Projects
-          </h1>
-          <p className={`max-w-3xl mx-auto text-lg ${
-            theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-          }`}>
-            Explore our diverse range of projects, from innovative products to cutting-edge services. 
-            Each project reflects our commitment to excellence in design, development, and problem-solving.
-          </p>
-        </motion.div>
-
-        
-        <div className="flex justify-center mb-8 space-x-4">
-          <button
-            className={`px-4 py-2 rounded-lg ${
-              selectedCategory === "Products" 
-                ? "bg-blue-600 text-white" 
-                : theme === "dark" 
-                ? "bg-gray-700 text-white" 
-                : "bg-gray-300 text-gray-900"
-            }`}
-            onClick={() => setSelectedCategory("Products")}
+      <main className="pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-8"
           >
-            Products
-          </button>
-          <button
-            className={`px-4 py-2 rounded-lg ${
-              selectedCategory === "Services" 
-                ? "bg-blue-600 text-white" 
-                : theme === "dark" 
-                ? "bg-gray-700 text-white" 
-                : "bg-gray-300 text-gray-900"
-            }`}
-            onClick={() => setSelectedCategory("Services")}
+            <h1 className={`text-4xl md:text-5xl font-bold mb-8 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}>
+              Our Projects
+            </h1>
+            <p className={`max-w-3xl mx-auto text-lg ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+            }`}>
+              Explore our diverse range of projects, from innovative products to cutting-edge services. 
+              Each project reflects our commitment to excellence in design, development, and problem-solving.
+            </p>
+          </motion.div>
+
+          
+          <div className="flex justify-center mb-8 space-x-4">
+            <button
+              className={`px-4 py-2 rounded-lg ${
+                selectedCategory === "Products" 
+                  ? "bg-blue-600 text-white" 
+                  : theme === "dark" 
+                  ? "bg-gray-700 text-white" 
+                  : "bg-gray-300 text-gray-900"
+              }`}
+              onClick={() => setSelectedCategory("Products")}
+            >
+              Products
+            </button>
+            <button
+              className={`px-4 py-2 rounded-lg ${
+                selectedCategory === "Services" 
+                  ? "bg-blue-600 text-white" 
+                  : theme === "dark" 
+                  ? "bg-gray-700 text-white" 
+                  : "bg-gray-300 text-gray-900"
+              }`}
+              onClick={() => setSelectedCategory("Services")}
+            >
+              Services
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {projects[selectedCategory].map((project, index) => (
+              <ProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className={`mt-20 p-8 rounded-xl text-center ${
+              theme === 'dark'
+                ? 'bg-gray-800/50'
+                : 'bg-white'
+            } shadow-lg`}
           >
-            Services
-          </button>
+            <h2 className="text-2xl font-bold mb-4">Have a Project in Mind?</h2>
+            <p className="mb-8">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
+            <motion.a href="/contact" className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900 transition-all duration-300">
+              Start a Project
+            </motion.a>
+          </motion.div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects[selectedCategory].map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className={`mt-20 p-8 rounded-xl text-center ${
-            theme === 'dark'
-              ? 'bg-gray-800/50'
-              : 'bg-white'
-          } shadow-lg`}
-        >
-          <h2 className="text-2xl font-bold mb-4">Have a Project in Mind?</h2>
-          <p className="mb-8">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
-          <motion.a href="/contact" className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900 transition-all duration-300">
-            Start a Project
-          </motion.a>
-        </motion.div>
-      </div>
+      </main>
     </div>
   );
 }

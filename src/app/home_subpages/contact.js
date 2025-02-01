@@ -74,171 +74,171 @@ export default function Contact() {
   }`;
 
   return (
-    <div
-      className={`min-h-screen py-12 px-4 sm:px-6 lg:px-8 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-50"
-      }`}
-    >
-      <div className="max-w-5xl mx-auto">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className={`text-4xl md:text-5xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-            Get in Touch
-          </h1>
-          <p className={`mt-4 text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>
-            Interested in learning more? We'd love to connect with you.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Panel: Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className={`flex flex-col justify-center rounded-xl p-8 shadow-2xl ${
-              theme === "dark" ? "bg-gray-800/50 text-white" : "bg-gray-100 text-gray-900"
-            }`}
-          >
-            <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-            <p className="mb-8 text-lg">
-              Reach out through any of the platforms below or send us a message directly.
+    <div className={`${
+      theme === "dark" ? "bg-gray-900/0" : "bg-gray-50/50"
+    }`}>
+      <main className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Page Header */}
+          <div className="text-center mb-12">
+            <h1 className={`text-4xl md:text-5xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+              Get in Touch
+            </h1>
+            <p className={`mt-4 text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>
+              Interested in learning more? We'd love to connect with you.
             </p>
-            <div className="space-y-4">
-              {contactInfo.map((info) => (
-                <div key={info.title} className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700">
-                    {info.icon}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Left Panel: Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className={`flex flex-col justify-center rounded-xl p-8 shadow-2xl ${
+                theme === "dark" ? "bg-gray-800/50 text-white" : "bg-gray-100 text-gray-900"
+              }`}
+            >
+              <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+              <p className="mb-8 text-lg">
+                Reach out through any of the platforms below or send us a message directly.
+              </p>
+              <div className="space-y-4">
+                {contactInfo.map((info) => (
+                  <div key={info.title} className="flex items-center space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">{info.title}</h3>
+                      <p className="text-sm">{info.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Panel: Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white dark:bg-gray-800/50 rounded-xl shadow-2xl p-8"
+            >
+              <h2 className={`text-3xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                Contact Us
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className={`block text-sm font-medium ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-700"
+                      }`}
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your name"
+                      className={inputClasses}
+                    />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold">{info.title}</h3>
-                    <p className="text-sm">{info.value}</p>
+                    <label
+                      htmlFor="email"
+                      className={`block text-sm font-medium ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-700"
+                      }`}
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="you@example.com"
+                      className={inputClasses}
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right Panel: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-gray-800/50 rounded-xl shadow-2xl p-8"
-          >
-            <h2 className={`text-3xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-              Contact Us
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="subject"
                     className={`block text-sm font-medium ${
                       theme === "dark" ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
-                    Name
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="Your name"
+                    placeholder="Subject"
                     className={inputClasses}
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="message"
                     className={`block text-sm font-medium ${
                       theme === "dark" ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
-                    Email
+                    Message
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="you@example.com"
-                    className={inputClasses}
-                  />
+                    placeholder="Your message..."
+                    className={`${inputClasses} resize-none`}
+                  ></textarea>
                 </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className={`block text-sm font-medium ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-700"
-                  }`}
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="Subject"
-                  className={inputClasses}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className={`block text-sm font-medium ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-700"
-                  }`}
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your message..."
-                  className={`${inputClasses} resize-none`}
-                ></textarea>
-              </div>
-              <div>
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
-                    isSubmitting
-                      ? "bg-gray-400 text-white cursor-not-allowed"
-                      : "bg-indigo-600 hover:bg-indigo-700 text-white"
-                  }`}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </motion.button>
-                {submitStatus === "success" && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="mt-4 text-green-500 text-center"
+                <div>
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
+                      isSubmitting
+                        ? "bg-gray-400 text-white cursor-not-allowed"
+                        : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                    }`}
                   >
-                    Message sent successfully!
-                  </motion.p>
-                )}
-              </div>
-            </form>
-          </motion.div>
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </motion.button>
+                  {submitStatus === "success" && (
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="mt-4 text-green-500 text-center"
+                    >
+                      Message sent successfully!
+                    </motion.p>
+                  )}
+                </div>
+              </form>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

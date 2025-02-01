@@ -125,50 +125,52 @@ export default function About() {
   const { theme } = useTheme();
 
   return (
-    <div className={`min-h-screen pt-20 ${
+    <div className={`${
       theme === 'dark' 
-        ? 'bg-gray-900 text-white' 
-        : 'bg-gray-50 text-gray-900'
+        ? 'bg-gray-900/0 text-white' 
+        : 'bg-gray-50/50 text-gray-900'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
-        {/* Mission Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
-            Our Mission
-          </h1>
-          <p className={`text-xl max-w-3xl mx-auto ${
-            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.
-          </p>
-        </motion.div>
-
-        {/* Team Section */}
-        <div className="mt-20">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+      <main className="pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
+          {/* Mission Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-3xl md:text-4xl font-bold text-center mb-12 ${
-              theme === 'dark' ? 'text-white' : 'text-gray-900'
-            }`}
+            className="text-center mb-20"
           >
-            Meet Our Team
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <TeamMember key={member.name} member={member} index={index} />
-            ))}
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}>
+              Our Mission
+            </h1>
+            <p className={`text-xl max-w-3xl mx-auto ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.
+            </p>
+          </motion.div>
+
+          {/* Team Section */}
+          <div className="mt-20">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className={`text-3xl md:text-4xl font-bold text-center mb-12 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}
+            >
+              Meet Our Team
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {teamMembers.map((member, index) => (
+                <TeamMember key={member.name} member={member} index={index} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -77,10 +77,15 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
-        }
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         float: 'float 3s ease-in-out infinite',
+        'fade-in': 'fade-in 1s ease-in-out forwards',
       }
     },
   },
