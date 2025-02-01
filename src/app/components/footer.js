@@ -1,60 +1,65 @@
 "use client";
-import "../css/footer.css";
-import 'aos/dist/aos.css'; 
-import SectionTitle from "../components/title";
+import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
+
+const socialLinks = [
+  { title: "TWITTER", link: "https://x.com/NexsysTech", icon: "/twitter.png" },
+  { title: "INSTAGRAM", link: "https://www.instagram.com/nexsys.tech/", icon: "/instagram.png" },
+  { title: "GITHUB", link: "https://github.com/darshp623/react-intro-ws", icon: "/github.PNG" },
+  { title: "TIKTOK", link: "https://www.tiktok.com/@nexsys.tech?lang=en", icon: "/tiktok.webp" },
+  { title: "REDDIT", link: "https://www.reddit.com/user/Nexsys_Tech/", icon: "/reddit.png" }
+];
+
+function SocialLink({ link, icon, title }) {
+  const { theme } = useTheme();
+  
+  return (
+    <motion.a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      className={`p-3 rounded-lg transition-colors duration-200 ${
+        theme === 'dark'
+          ? 'hover:bg-gray-800'
+          : 'hover:bg-gray-100'
+      }`}
+    >
+      <img 
+        src={icon} 
+        alt={`${title} icon`} 
+        className="w-10 h-10 object-contain filter hover:brightness-125" 
+      />
+    </motion.a>
+  );
+}
 
 export default function Footer() {
-
-    function Track({ title, link, children }) {
-        return (
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <div className="track-item">
-                {children}
-                <h1 className="track-title">{title}</h1>
-            </div>
-          </a>
-        );
-    }   
-
-    return (
-        <div
-        className="text-white"
-        style={{
-          background:
-            "radial-gradient(125% 125% at 50% 10%, #004d40 0%, #000 40%, #00695c 70%, #000 100%)",
-        }}
-      >
-        <header className="flex justify-between items-center px-8 py-6">
-        <div className="footer-page">
-            <div className="footer-content">
-                <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
-                    <Track title="TWITTER" link="https://x.com/NexsysTech">
-                        <img src="/twitter.png" alt="twitter-png" className="track-image"/>
-                    </Track>
-                    <Track title="INSTAGRAM" link="https://www.instagram.com/nexsys.tech/">
-                        <img src="/instagram.png" alt="instagram-png" className="track-image"/>
-                    </Track>
-                    <Track title="GITHUB" link="https://github.com/darshp623/react-intro-ws">
-                        <img src="/github.PNG" alt="github-png" className="track-image"/>
-                    </Track>
-                    <Track title="TIKTOK" link="https://www.tiktok.com/@nexsys.tech?lang=en">
-                        <img src="/tiktok.webp" alt="tiktok-webp" className="track-image"/>
-                    </Track>
-                    <Track title="REDDIT" link="https://www.reddit.com/user/Nexsys_Tech/">
-                        <img src="/reddit.png" alt="reddit-png" className="track-image"/>
-                    </Track>
-                </div>
-                <div className="footer-info">
-                    <p>&copy; 2025 NexSys. All Rights Reserved.</p>
-                    <p className="mt-2">
-                      <a href="#" className="footer-link">Privacy Policy</a> |
-                      <a href="#" className="footer-link">Terms of Service</a> |
-                      <a href="mailto:dpatel37@umbc.edu" className="footer-link">Contact Us</a>
-                    </p>
-                </div>
-            </div>
+  const { theme } = useTheme();
+  
+  return (
+    <footer className={`${
+      theme === 'dark'
+        ? 'bg-gray-900 text-white'
+        : 'bg-white text-gray-900'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-8">
+          <div className="flex justify-center items-center space-x-6">
+            {socialLinks.map((social) => (
+              <SocialLink key={social.title} {...social} />
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <p className={`text-sm ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            }`}>
+              &copy; {new Date().getFullYear()} NexSys. All rights reserved.
+            </p>
+          </div>
         </div>
-        </header>
-    </div>
-    )
-};
+      </div>
+    </footer>
+  );
+}
