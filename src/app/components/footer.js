@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 const socialLinks = [
   { title: "Twitter", link: "https://x.com/NexsysTech", icon: "/twitter.png" },
   { title: "Instagram", link: "https://www.instagram.com/nexsys.tech/", icon: "/instagram.png" },
-  { title: "GitHub", link: "https://github.com/darshp623/react-intro-ws", icon: "/github.PNG" },
+  { title: "GitHub", link: "https://github.com/Nex-Sys-io", icon: "/github.PNG" },
   { title: "TikTok", link: "https://www.tiktok.com/@nexsys.tech?lang=en", icon: "/tiktok.webp" },
   { title: "Reddit", link: "https://www.reddit.com/user/Nexsys_Tech/", icon: "/reddit.png" }
 ];

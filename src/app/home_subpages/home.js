@@ -20,7 +20,7 @@ export default function Home() {
     }`}>
       <main className="py-2 px-4 sm:px-6 lg:px-4">
         {/* Main Section */}
-        <section className="relative pt-32">
+        <section className="relative pt-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
               <motion.h1

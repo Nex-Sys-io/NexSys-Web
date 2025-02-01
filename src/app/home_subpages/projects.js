@@ -6,42 +6,42 @@ import { useTheme } from "../context/ThemeContext";
 const projects = {
   Products: [
     {
-      title: "AI-Powered Analytics",
+      title: "Cursive Power",
       description:
-        "Advanced analytics platform using machine learning to provide actionable business insights.",
-      image: "/analytics.jpg",
+        "Taking a pictue of cursive text and converting it to a digital format.",
+      image: "/cursivepower.png",
       tags: ["AI/ML", "Python", "React", "AWS"],
       link: "#",
-      status: "Live"
+      status: "In Development"
     },
     {
-      title: "Smart Document Processing",
+      title: "Fundr",
       description:
-        "Automated document processing system with OCR and natural language understanding capabilities.",
-      image: "/document.jpg",
+        "Grant Scraping Web Tool.",
+      image: "/fundr.png",
       tags: ["NLP", "Computer Vision", "Node.js", "MongoDB"],
       link: "#",
-      status: "Beta"
+      status: "In Development"
     },
   ],
   Services: [
     {
-      title: "Predictive Maintenance System",
+      title: "Bisyn MVP",
       description:
-        "IoT-based system for predicting equipment maintenance needs using sensor data and machine learning.",
-      image: "/maintenance.jpg",
+        "Most Valuable Product for Bisyn.",
+      image: "/bisyn.png",
       tags: ["IoT", "TensorFlow", "Time Series", "Azure"],
       link: "#",
-      status: "Development"
+      status: "In Development"
     },
     {
-      title: "Customer Behavior Analysis",
+      title: "NotifyNow",
       description:
-        "Real-time customer behavior analysis platform using AI to improve user experience.",
-      image: "/customer.jpg",
+        "AI Automated Phone Call Response System.",
+      image: "/NotifyNow.png",
       tags: ["Data Science", "Python", "Vue.js", "GCP"],
       link: "#",
-      status: "Live"
+      status: "In Development"
     },
   ],
 };
