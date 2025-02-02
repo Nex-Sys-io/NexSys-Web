@@ -107,25 +107,31 @@ export default function Navbar() {
                   : "hover:bg-white/10"
               }`}
             >
-              <svg
-                className={`w-6 h-6 ${
-                  isScrolled 
-                    ? "text-gray-600 dark:text-gray-300" 
-                    : "text-white"
-                }`}
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
+              {isMenuOpen ? (
+                <svg
+                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // Ensures visibility in both themes
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // Ensures visibility in both themes
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+                </svg>
+              )}
             </button>
           </div>
         </div>

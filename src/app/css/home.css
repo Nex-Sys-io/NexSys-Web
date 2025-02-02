@@ -8,7 +8,7 @@
     min-height: 3rem; /* min height */
     border-radius: 2rem;
     border: 0.2rem solid transparent;
-    border-color: #00ff59;
+    border-color: #00eeff;
     z-index: 0;
     color: black;
     display: flex;
@@ -39,7 +39,7 @@
     color: white;
     transform: scale(1.05);
     cursor: pointer;
-    background: #1c685e;
+    background: #2b00ff;
     border-color: #ffffff;
   }
 
