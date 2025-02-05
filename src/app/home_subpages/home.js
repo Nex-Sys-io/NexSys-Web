@@ -38,7 +38,7 @@ export default function Home() {
                   Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
                 </motion.p>
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-10">
-                  <Link href="/contact">
+                  <Link href="#about">
                     <button
                       className={`px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
                         theme === "dark"

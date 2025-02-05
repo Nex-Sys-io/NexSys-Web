@@ -172,7 +172,7 @@ export default function Projects() {
           >
             <h2 className="text-2xl font-bold mb-4">Have a Project in Mind?</h2>
             <p className="mb-8">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
-            <motion.a href="/contact" className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900 transition-all duration-300">
+            <motion.a href="#projects" className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900 transition-all duration-300">
               Start a Project
             </motion.a>
           </motion.div>
