@@ -219,7 +219,7 @@ export default function Contact() {
                     className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
                       isSubmitting
                         ? "bg-gray-400 text-white cursor-not-allowed"
-                        : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                        : "bg-blue-600 hover:bg-blue-700 text-white"
                     }`}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
