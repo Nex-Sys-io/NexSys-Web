@@ -14,7 +14,7 @@ export async function POST(req) {
     // Send email using Resend
     await resend.emails.send({
       from: 'onboarding@resend.dev', // Must be a verified domain in Resend
-      to: 'nexsys.tech.ai@gmail.com', // Your email where messages will be received
+      to: 'darshp717@gmail.com', // Your email where messages will be received
       subject: `New Contact Form Submission: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
