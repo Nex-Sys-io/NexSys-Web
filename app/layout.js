@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/Nexsys.png" type="image/png" sizes="64x64"/>
+        <link rel="icon" href="/Nexsys.PNG" type="image/png" sizes="64x64"/>
         <meta name="color-scheme" content="light dark" />
       </head>
       <body className={`${inter.className} antialiased`}>
