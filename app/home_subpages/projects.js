@@ -19,7 +19,7 @@ const projects = {
       title: "Fundr",
       description:
         "Grant Scraping Web Tool.",
-      image: "/fundr.png",
+      image: "/Fundr.png",
       tags: ["NLP", "Computer Vision", "Node.js", "MongoDB"],
       link: "#",
       status: "In Development"
@@ -30,7 +30,7 @@ const projects = {
       title: "Bisyn MVP",
       description:
         "Minimum Viable Product for Bisyn.",
-      image: "/bisyn.png",
+      image: "/Bisyn.png",
       tags: ["IoT", "TensorFlow", "Time Series", "Azure"],
       link: "#",
       status: "In Development"
