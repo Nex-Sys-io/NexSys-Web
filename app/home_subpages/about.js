@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Darsh Patel",
     role: "DevOps & Front End Developer",
-    image: "/darsh.jpg",
+    image: "/pic-of-me.jpg",
     bio: "Specializing in cloud infrastructure and seamless UI/UX experiences.",
     links: {
       github: "https://github.com/darshp623",
