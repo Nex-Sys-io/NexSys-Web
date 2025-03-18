@@ -5,9 +5,9 @@ import { useTheme } from "../context/ThemeContext";
 const teamMembers = [
   {
     name: "Darsh Patel",
-    role: "Front End Developer",
+    role: "DevOps & Front End Developer",
     image: "/darshpatel.jpeg",
-    bio: "Leading innovation in AI and software development.",
+    bio: "Specializing in cloud infrastructure and seamless UI/UX experiences.",
     links: {
       github: "https://github.com/darshp623",
       linkedin: "https://linkedin.com/in/darshp623",
@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Chris White",
     role: "Founder & Advisor",
     image: "/chriswhite.jpeg",
-    bio: "Expert in scalable architecture and cloud solutions.",
+    bio: "Serial Entrepreneur, guiding NexSys with strategic insights and industry knowledge.",
     links: {
       github: "https://github.com/ChrisWhiteSr",
       linkedin: "https://www.linkedin.com/in/chris-white-b2370b17/",
@@ -27,7 +27,7 @@ const teamMembers = [
     name: "Peter Gatira",
     role: "AI & Back End Developer",
     image: "/petergatira.png",
-    bio: "Specialized in full-stack development and AI integration.",
+    bio: "Specialized in backend development and AI integration.",
     links: {
       github: "https://github.com/PeterGQ",
       linkedin: "https://www.linkedin.com/in/peter-gatira-039569267/",
@@ -37,7 +37,7 @@ const teamMembers = [
     name: "Sean Belon",
     role: "AI & Back End Developer",
     image: "/seanbelon.png",
-    bio: "Driving product strategy and user experience.",
+    bio: "Specialized in backend development and AI integration.",
     links: {
       github: "https://github.com/Dream-Yami",
       linkedin: "https://www.linkedin.com/in/sean-belon/",
@@ -45,9 +45,9 @@ const teamMembers = [
   },
   {
     name: "Alfonso Martinez",
-    role: "Front End Developer",
+    role: "Data Analyst",
     image: "/alfonsomartinez.jpeg",
-    bio: "Creating beautiful and intuitive user interfaces.",
+    bio: "Specialized in interpreting patterns and trends, with keen analysis.",
     links: {
       github: "https://github.com/OwlFunsOh",
       linkedin: "https://www.linkedin.com/in/alfonso-sebastian-martinez/",
