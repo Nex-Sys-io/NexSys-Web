@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <title>NexSys</title>
         <link rel="icon" href="/Nexsys.PNG" type="image/png" sizes="64x64"/>
         <meta name="color-scheme" content="light dark" />
       </head>
