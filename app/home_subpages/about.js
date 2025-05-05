@@ -69,6 +69,7 @@ const teamMembers = [
     image: "/pahaldave.jpg",
     bio: "Drives brand growth with data-driven campaigns and engaging social content.",
     links: {
+      github: "https://github.com/pahalraval",
       instagram: "https://www.instagram.com/pariiii.444/",
       linkedin: "https://www.linkedin.com/in/pahaldave/",
     }
@@ -115,7 +116,7 @@ function TeamMember({ member, index }) {
           {member.bio}
         </p>
         <div className="mt-4 flex space-x-4">
-        {member.links.github && member.name !== "Pahal Dave" && (
+        {member.links.github && (
           <a
             href={member.links.github}
             target="_blank"
