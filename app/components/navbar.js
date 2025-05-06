@@ -23,7 +23,7 @@ export default function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 ${
         theme === 'dark'
           ? 'bg-gray-900/30 shadow-lg'
           : 'bg-white shadow-lg'

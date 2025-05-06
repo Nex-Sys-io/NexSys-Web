@@ -20,7 +20,7 @@ function SocialLink({ link, icon, title }) {
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="flex flex-col items-center space-y-2 p-3 rounded-lg transition-colors duration-200"
+      className="flex flex-col items-center space-y-2 p-3 rounded-lg"
     >
       <img 
         src={icon} 

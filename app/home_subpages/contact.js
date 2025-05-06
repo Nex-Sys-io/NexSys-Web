@@ -252,7 +252,7 @@ export default function Contact() {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
+                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
                       isSubmitting
                         ? "bg-gray-400 text-white cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white"

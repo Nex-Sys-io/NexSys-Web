@@ -60,13 +60,13 @@ function ProjectCard({ project, index }) {
         theme === 'dark'
           ? 'bg-gray-800/50 hover:bg-gray-800/80'
           : 'bg-white hover:bg-gray-50'
-      } shadow-lg hover:shadow-xl transition-all duration-300`}
+      } shadow-lg hover:shadow-xl`}
     >
       <div className="relative h-48 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover transform hover:scale-110 transition-transform"
         />
         <div className="absolute top-4 right-4">
           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -176,7 +176,7 @@ export default function Projects() {
             <p className="mb-8">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
             <motion.button
               onClick={() => setIsSurveyOpen(true)}
-              className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900 transition-all duration-300"
+              className="inline-block px-8 py-3 rounded-lg text-white font-medium bg-blue-800 hover:bg-blue-900"
             >
               Start a Project
             </motion.button>

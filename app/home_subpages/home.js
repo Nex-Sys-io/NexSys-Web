@@ -40,7 +40,7 @@ export default function Home() {
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-10">
                   <Link href="#about">
                     <button
-                      className={`px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                      className={`px-8 py-4 rounded-lg text-lg font-semibold transform hover:scale-105 ${
                         theme === "dark"
                           ? "bg-blue-600 text-white hover:bg-blue-700"
                           : "bg-blue-600 text-white hover:bg-blue-700"
@@ -137,7 +137,7 @@ export default function Home() {
                         theme === "dark"
                           ? "bg-gray-800/50 border-[1.5px] border-white"
                           : "bg-white border-[1.5px] border-black"
-                      } shadow-lg hover:shadow-xl transition-all duration-300 text-center`}
+                      } shadow-lg hover:shadow-xl text-center`}
                     >
                       <div className="flex justify-center">{item.icon}</div>
                       <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>

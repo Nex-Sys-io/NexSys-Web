@@ -89,7 +89,7 @@ function TeamMember({ member, index }) {
           theme === 'dark'
             ? 'bg-gray-800/50 hover:bg-gray-800/80 border-white'
             : 'bg-white hover:bg-gray-50 border-black'
-        } shadow-lg hover:shadow-xl transition-all duration-300`}
+        } shadow-lg hover:shadow-xl`}
       >
         <div className="flex items-center space-x-4">
           <img
