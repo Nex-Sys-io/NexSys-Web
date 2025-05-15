@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
+import { Particles } from "../components/particles";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -13,8 +14,10 @@ export default function Home() {
   };
 
   return (
-    <div className={`${theme === "dark" ? "bg-gray-900/0 text-white" : "bg-gray-50/50 text-gray-900"}`}>
-      <main className="py-2 px-4 sm:px-6 lg:px-4">
+    <div className={`${theme === "dark" ? "bg-gray-950 text-white" : "bg-gray-100/80 text-gray-900"} relative overflow-hidden`}>
+      {/* Stars background */}
+      <Particles className="absolute inset-0 w-full h-full z-0" quantity={300} color={theme === 'dark' ? '#b6d0ff' : '#b6d0ff'} />
+      <main className="py-2 px-4 sm:px-6 lg:px-4 relative z-10">
         <section className="relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
@@ -25,29 +28,38 @@ export default function Home() {
                   md:pt-24 md:min-h-0 md:flex-none md:justify-start
                 `}
               >
-                <motion.h1 {...fadeInUp} className="text-5xl md:text-7xl font-bold mb-8">
-                  <span className={theme === "dark" ? "text-white" : "text-gray-900"}>
-                    NexSys Tech
-                  </span>
+                <motion.h1 {...fadeInUp} className="text-2xl lg:text-7xl font-bold mb-4">
+                  NexSys Tech
                 </motion.h1>
                 <motion.p
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
-                  className={`text-xl md:text-2xl mb-12 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
+                  className={`text-base md:text-lg mb-8 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
                 >
                   Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
                 </motion.p>
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-10">
                   <Link href="#about">
-                    <button
-                      className={`px-8 py-4 rounded-lg text-lg font-semibold transform hover:scale-105 ${
-                        theme === "dark"
-                          ? "bg-blue-600 text-white hover:bg-blue-700"
-                          : "bg-blue-600 text-white hover:bg-blue-700"
-                      } shadow-lg hover:shadow-xl`}
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      whileHover={{ scale: 1.08 }}
+                      className="relative overflow-hidden px-12 py-4 min-w-[10rem] rounded-full font-bold text-lg shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-500 text-white transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-600 group"
                     >
-                      Get Started
-                    </button>
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Get Started</span>
+                      {/* Glossy animated overlay */}
+                      <span className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+                        <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full" style={{transitionProperty: 'top, background'}} />
+                      </span>
+                      {/* Border and background transition on hover */}
+                      <style jsx>{`
+                        .group:hover {
+                          border-color: #fff !important;
+                          background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%) !important;
+                        }
+                      `}</style>
+                    </motion.button>
                   </Link>
                 </motion.div>
               </div>
@@ -61,7 +73,7 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="mb-12"
                 >
-                  <h2 className={`text-4xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                  <h2 className="text-xl md:text-2xl font-bold mb-3">
                     What We Offer
                   </h2>
                   <div className={`h-1 w-64 mx-auto rounded ${theme === "dark" ? "bg-white" : "bg-gray-900"}`} />
@@ -74,7 +86,7 @@ export default function Home() {
                       description: "We tailor AI technologies to meet your specific business needs and challenges.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 mb-3 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
+                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -93,7 +105,7 @@ export default function Home() {
                       description: "Our software solutions are built for growth and scalability, ensuring long-term value.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 mb-3 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
+                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -112,7 +124,7 @@ export default function Home() {
                       description: "We provide continuous support to ensure smooth implementation and operation.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 mb-3 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
+                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -129,23 +141,38 @@ export default function Home() {
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.2 }}
-                      className={`p-6 rounded-xl ${
-                        theme === "dark"
-                          ? "bg-gray-800/50 border-[1.5px] border-white"
-                          : "bg-white border-[1.5px] border-black"
-                      } shadow-lg hover:shadow-xl text-center`}
+                      transition={{ duration: 0.7, delay: index * 0.2 }}
+                      whileHover={{ y: -8, rotate: -2 + index * 2, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
+                      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
                     >
-                      <div className="flex justify-center">{item.icon}</div>
-                      <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-                        {item.title}
-                      </h3>
-                      <p className={`text-base ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                        {item.description}
-                      </p>
+                      <div
+                        className={`h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out ${
+                          theme === "dark" ? "bg-black/80" : "bg-blue-100/70"
+                        } backdrop-blur-lg`}
+                      >
+                        <div
+                          className={`p-3 mb-4 rounded-full transition-all duration-300 ease-in-out shadow-md ${
+                            theme === "dark"
+                              ? "bg-slate-700 group-hover:bg-blue-600/80"
+                              : "bg-slate-200 group-hover:bg-blue-500/80"
+                          }`}
+                        >
+                          {item.icon}
+                        </div>
+                        <h3
+                          className={`text-xl font-semibold mb-2 ${
+                            theme === "dark" ? "text-white" : "text-gray-900"
+                          }`}
+                        >
+                          {item.title}
+                        </h3>
+                        <p className={`text-sm ${theme === "dark" ? "text-blue-100" : "text-gray-700"}`}>
+                          {item.description}
+                        </p>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
