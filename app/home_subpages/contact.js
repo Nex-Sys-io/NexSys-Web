@@ -87,201 +87,125 @@ export default function Contact() {
   ];
 
   // Original minimal input styling
-  const inputClasses = `mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 ${
+  const inputClasses = `mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm ${
     theme === "dark"
-      ? "border-gray-600 focus:ring-white text-white placeholder-gray-400"
-      : "border-gray-300 focus:ring-gray-900 text-gray-900 placeholder-gray-500"
+      ? "border-gray-600 text-white placeholder-gray-400 bg-slate-900/60"
+      : "border-gray-300 text-gray-900 placeholder-gray-500 bg-white/80"
   }`;
 
   return (
     <div className={`${theme === "dark" ? "bg-gray-900/0" : "bg-gray-50/50"}`}>
-      <main className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      <main className="pt-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Page Header */}
-          <div className="text-center mb-12">
-            <h1
-              className={`text-4xl md:text-5xl font-bold ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              }`}
-            >
-              Get in Touch
-            </h1>
-            <p
-              className={`mt-4 text-lg ${
-                theme === "dark" ? "text-gray-300" : "text-gray-700"
-              }`}
-            >
-              Interested in learning more? We'd love to connect with you.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl"
+          >
+            <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
+              <h1 className={`text-2xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
+              <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Interested in learning more? We'd love to connect with you.</p>
+            </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Panel: Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className={`flex flex-col justify-center rounded-xl p-8 shadow-2xl ${
-                theme === "dark"
-                  ? "bg-gray-800/50 text-white"
-                  : "bg-gray-100 text-gray-900"
-              }`}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
-              <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-              <p className="mb-8 text-lg">
-                Reach out through any of the platforms below or send us a message directly.
-              </p>
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <div key={info.title} className="flex items-center space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold">{info.title}</h3>
-                      <p className="text-sm">{info.value}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg flex flex-col justify-center text-center`}>
+                <h2 className={`text-xl md:text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
+                <p className={`mb-8 text-lg ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Reach out through any of the platforms below or send us a message directly.</p>
+                <div className="space-y-6">
+                  {contactInfo.map((info, idx) => (
+                    <motion.div
+                      key={info.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      whileHover={{ y: -6, scale: 1.04, boxShadow: '0 8px 24px 0 rgba(0, 176, 255, 0.12)' }}
+                      className={`group flex items-center space-x-4 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${theme === 'dark' ? 'bg-slate-800/90' : 'bg-white/90 border border-blue-100'}`}
+                    >
+                      <div className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 ${theme === 'dark' ? 'bg-blue-900' : 'bg-blue-100'}`}> 
+                        <span className={`${theme === 'dark' ? 'text-white' : 'text-blue-700'} text-2xl`}>{info.icon}</span>
+                      </div>
+                      <div className="text-left">
+                        <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>{info.title}</h3>
+                        <p className={`text-base ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>{info.value}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
             {/* Right Panel: Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white dark:bg-gray-800/50 rounded-xl shadow-2xl p-8"
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
-              <h2
-                className={`text-3xl font-bold mb-6 ${
-                  theme === "dark" ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Contact Us
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className={`block text-sm font-medium ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-700"
-                      }`}
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your name"
-                      className={inputClasses}
-                    />
+              <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg`}>
+                <h2 className={`text-xl md:text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Name</label>
+                      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" className={inputClasses} />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Email</label>
+                      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="you@example.com" className={inputClasses} />
+                    </div>
                   </div>
                   <div>
-                    <label
-                      htmlFor="email"
-                      className={`block text-sm font-medium ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-700"
+                    <label htmlFor="subject" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Subject</label>
+                    <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required placeholder="Subject" className={inputClasses} />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Message</label>
+                    <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required placeholder="Your message..." className={`${inputClasses} resize-none`} />
+                  </div>
+                  <div>
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: 1.05 }}
+                      className={`relative w-full py-4 px-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-500 dark:from-blue-700 dark:via-blue-500 dark:to-cyan-500 ${theme === 'dark' ? 'text-white' : 'text-white'} transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden ${
+                        isSubmitting ? "bg-gray-400 text-white cursor-not-allowed border-gray-400" : ""
                       }`}
                     >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="you@example.com"
-                      className={inputClasses}
-                    />
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-white">{isSubmitting ? "Sending..." : "Send Message"}</span>
+                      <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full z-0 pointer-events-none" style={{transitionProperty: 'top, background'}} />
+                    </motion.button>
+                    {/* Success & Error Messages */}
+                    {submitStatus === "success" && (
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="mt-4 text-green-500 text-center"
+                      >
+                        Message sent successfully!
+                      </motion.p>
+                    )}
+                    {submitStatus === "error" && (
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="mt-4 text-red-500 text-center"
+                      >
+                        Oops! Something went wrong. Please try again.
+                      </motion.p>
+                    )}
                   </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className={`block text-sm font-medium ${
-                      theme === "dark" ? "text-gray-300" : "text-gray-700"
-                    }`}
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="Subject"
-                    className={inputClasses}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className={`block text-sm font-medium ${
-                      theme === "dark" ? "text-gray-300" : "text-gray-700"
-                    }`}
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your message..."
-                    className={`${inputClasses} resize-none`}
-                  />
-                </div>
-
-                <div>
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmitting}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
-                      isSubmitting
-                        ? "bg-gray-400 text-white cursor-not-allowed"
-                        : "bg-blue-600 hover:bg-blue-700 text-white"
-                    }`}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </motion.button>
-
-                  {/* Success & Error Messages */}
-                  {submitStatus === "success" && (
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="mt-4 text-green-500 text-center"
-                    >
-                      Message sent successfully!
-                    </motion.p>
-                  )}
-                  {submitStatus === "error" && (
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="mt-4 text-red-500 text-center"
-                    >
-                      Oops! Something went wrong. Please try again.
-                    </motion.p>
-                  )}
-                </div>
-              </form>
+                </form>
+              </div>
             </motion.div>
           </div>
         </div>

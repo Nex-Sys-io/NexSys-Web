@@ -75,6 +75,14 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+
+  /* Explicit heading color overrides */
+  h1, h2, h3 {
+    color: #0a2540; /* deep blue for light mode */
+  }
+  .dark h1, .dark h2, .dark h3 {
+    color: #fff;
+  }
 }
 
 @layer components {
