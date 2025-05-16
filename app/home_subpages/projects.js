@@ -20,7 +20,7 @@ const projects = {
       description:
         "Grant Scraping Web Tool.",
       image: "/Fundr.png",
-      tags: ["NLP", "Computer Vision", "Node.js", "MongoDB"],
+      tags: ["React", "Python", "AWS", "S3"],
       link: "#",
       status: "In Development"
     },
@@ -31,7 +31,7 @@ const projects = {
       description:
         "Minimum Viable Product for Bisyn.",
       image: "/Bisyn.png",
-      tags: ["IoT", "TensorFlow", "Time Series", "Azure"],
+      tags: ["React", "Python", "Flask CORS", "AWS S3", "Vercel", "Digital Ocean"],
       link: "#",
       status: "In Development"
     },
@@ -40,7 +40,7 @@ const projects = {
       description:
         "AI Automated Phone Call Response System.",
       image: "/NotifyNow.png",
-      tags: ["Data Science", "Python", "Vue.js", "GCP"],
+      tags: ["Data Science", "Python", "React", "AWS"],
       link: "#",
       status: "In Development"
     },
