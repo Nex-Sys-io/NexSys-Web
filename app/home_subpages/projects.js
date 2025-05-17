@@ -133,7 +133,7 @@ export default function Projects() {
             className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
           >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
-              <h1 className="text-2xl md:text-4xl font-extrabold mb-3">Our Projects</h1>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Projects</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Explore our diverse range of projects, from innovative products to cutting-edge services. Each project reflects our commitment to excellence in design, development, and problem-solving.</p>
             </div>
           </motion.div>
@@ -178,8 +178,8 @@ export default function Projects() {
             className={`mx-auto mt-20 max-w-4xl p-0.5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 shadow-xl`}
           >
             <div className={`rounded-2xl p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center w-full`}> 
-              <h2 className="text-xl md:text-2xl font-extrabold mb-2">Have a Project in Mind?</h2>
-              <p className="mb-8 text-sm font-medium text-blue-900 dark:text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Have a Project in Mind?</h2>
+              <p className="mb-4 text-sm font-medium text-blue-900 dark:text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
               <motion.button
                 onClick={() => setIsSurveyOpen(true)}
                 whileHover={{ scale: 1.07 }}

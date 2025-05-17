@@ -14,9 +14,11 @@ export default function Home() {
   };
 
   return (
-    <div className={`${theme === "dark" ? "bg-gray-950 text-white" : "bg-gray-100/80 text-gray-900"} relative overflow-hidden`}>
-      {/* Stars background */}
-      <Particles className="absolute inset-0 w-full h-full z-0" quantity={300} color={theme === 'dark' ? '#b6d0ff' : '#b6d0ff'} />
+    <div className={`${
+      theme === 'dark' 
+        ? 'bg-gray-900/0 text-white' 
+        : 'bg-gray-50/50 text-gray-900'
+    } relative overflow-hidden min-h-screen`}>
       <main className="py-2 px-4 sm:px-6 lg:px-4 relative z-10">
         <section className="relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,21 +26,25 @@ export default function Home() {
               {/* Header Content */}
               <div
                 className={`
-                  pt-0 min-h-screen flex flex-col justify-center
+                  pt-10 min-h-[100dvh] flex flex-col justify-center
                   md:pt-24 md:min-h-0 md:flex-none md:justify-start
                 `}
+                style={{ WebkitHeight: '100dvh' }}  
               >
-                <motion.h1 {...fadeInUp} className="text-2xl lg:text-7xl font-bold mb-4">
+                <motion.h1 {...fadeInUp} className="text-5xl lg:text-7xl font-bold mb-4">
                   NexSys Tech
                 </motion.h1>
                 <motion.p
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
-                  className={`text-base md:text-lg mb-8 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
+                  className={`text-base md:text-lg mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
                 >
                   Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
                 </motion.p>
-                <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-10">
+                <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="mb-6 md:hidden px-4">
+                  <img src="/Nexsys.PNG" alt="NexSys Logo" className="w-full max-w-full mx-auto" />
+                </motion.div>
+                <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-6 md:mb-10">
                   <Link href="#about">
                     <motion.button
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -146,7 +152,7 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.7, delay: index * 0.2 }}
                       whileHover={{ y: -8, rotate: -2 + index * 2, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
-                      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+                      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 w-full max-w-full`}
                     >
                       <div
                         className={`h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out ${

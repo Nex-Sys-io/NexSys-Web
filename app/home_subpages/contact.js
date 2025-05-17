@@ -104,7 +104,7 @@ export default function Contact() {
             className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl"
           >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
-              <h1 className={`text-2xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
+              <h1 className={`text-3xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Interested in learning more? We'd love to connect with you.</p>
             </div>
           </motion.div>
@@ -118,8 +118,8 @@ export default function Contact() {
               className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg flex flex-col justify-center text-center`}>
-                <h2 className={`text-xl md:text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
-                <p className={`mb-8 text-lg ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Reach out through any of the platforms below or send us a message directly.</p>
+                <h2 className={`text-2xl md:text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
+                <p className={`mb-10 text-lg ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Reach out through any of the platforms below or send us a message directly.</p>
                 <div className="space-y-6">
                   {contactInfo.map((info, idx) => (
                     <motion.div
@@ -152,7 +152,7 @@ export default function Contact() {
               className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg`}>
-                <h2 className={`text-xl md:text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
+                <h2 className={`text-2xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

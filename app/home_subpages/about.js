@@ -165,7 +165,7 @@ export default function About() {
             className="mx-auto mb-20 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
           >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
-              <h1 className="text-2xl md:text-4xl font-extrabold mb-3">Our Mission</h1>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Mission</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.</p>
             </div>
           </motion.div>
@@ -176,7 +176,7 @@ export default function About() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl font-bold text-center mb-6"
+              className="text-4xl md:text-4xl font-bold text-center mb-6"
             >
               Meet Our Team
             </motion.h2>
