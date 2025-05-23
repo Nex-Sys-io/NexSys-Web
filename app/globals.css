@@ -102,12 +102,12 @@
 
   /* Custom Selection */
   ::selection {
-    @apply bg-primary-500/30 text-primary-900 dark:text-primary-100;
+    @apply bg-[hsl(220,90%,30%)] text-white;
   }
 
   /* Custom Focus Outline */
   :focus {
-    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+    @apply outline-none ring-2 ring-[hsl(220,90%,40%)] ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
   }
 
   /* ✅ Primary Button Styling */
@@ -137,12 +137,12 @@
 
   .before-content::before {
     content: "{";
-    @apply absolute -left-4 text-blue-500;
+    @apply absolute -left-4 text-[hsl(220,90%,40%)];
   }
 
   .before-content::after {
     content: "}";
-    @apply absolute -right-4 text-blue-500;
+    @apply absolute -right-4 text-[hsl(220,90%,40%)];
   }
 }
 
