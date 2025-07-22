@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 
 export default function ProjectSurvey({ isOpen, onClose }) {
@@ -119,9 +119,7 @@ export default function ProjectSurvey({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+      <div
         className={`${
           theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-900"
         } p-8 rounded-xl max-w-md w-full mx-4`}
@@ -135,11 +133,7 @@ export default function ProjectSurvey({ isOpen, onClose }) {
           </button>
 
           {step === 1 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="space-y-4"
-            >
+            <div className="space-y-4">
               <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
               <input
                 type="text"
@@ -184,15 +178,11 @@ export default function ProjectSurvey({ isOpen, onClose }) {
                   {error}
                 </div>
               )}
-            </motion.div>
+            </div>
           )}
 
           {step === 2 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="space-y-4"
-            >
+            <div className="space-y-4">
               <h2 className="text-2xl font-bold mb-4">Project Type</h2>
               <div className="space-y-2">
                 <button
@@ -208,15 +198,11 @@ export default function ProjectSurvey({ isOpen, onClose }) {
                   Service
                 </button>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {step === 3 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="space-y-4"
-            >
+            <div className="space-y-4">
               <h2 className="text-2xl font-bold mb-4">Select Specific Project</h2>
               <div className="space-y-2">
                 {(formData.projectType === "product" ? productOptions : serviceOptions).map(
@@ -231,15 +217,11 @@ export default function ProjectSurvey({ isOpen, onClose }) {
                   )
                 )}
               </div>
-            </motion.div>
+            </div>
           )}
 
           {step === 4 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center space-y-4"
-            >
+            <div className="text-center space-y-4">
               <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
               <p>
                 We've received your project interest and will get back to you soon at{" "}
@@ -251,10 +233,10 @@ export default function ProjectSurvey({ isOpen, onClose }) {
               >
                 Close
               </button>
-            </motion.div>
+            </div>
           )}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 } 

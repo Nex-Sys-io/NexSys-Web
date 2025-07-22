@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 
 const socialLinks = [
@@ -12,14 +12,11 @@ const socialLinks = [
 
 function SocialLink({ link, icon, title }) {
   const { theme } = useTheme();
-  
   return (
-    <motion.a
+    <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
       className="flex flex-col items-center space-y-2 p-3 rounded-lg"
     >
       <img 
@@ -32,7 +29,7 @@ function SocialLink({ link, icon, title }) {
       }`}>
         {title}
       </span>
-    </motion.a>
+    </a>
   );
 }
 

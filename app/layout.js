@@ -3,7 +3,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
-import CursorTrail from "./components/CursorTrail";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +21,6 @@ export default function RootLayout({ children }) {
               {children}
             </div>
           </div>
-          <CursorTrail />
         </ThemeProvider>
       </body>
     </html>
