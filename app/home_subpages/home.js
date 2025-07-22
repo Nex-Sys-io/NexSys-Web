@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
-import { Particles } from "../components/particles";
 
 export default function Home() {
   const { theme } = useTheme();
