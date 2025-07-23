@@ -70,14 +70,17 @@
   body {
     @apply bg-background text-foreground antialiased;
     overflow-x: hidden;
-    /* Static dark blue gradient background for both themes */
-    background: linear-gradient(135deg, #061728 0%, #060b19 100%);
-    background-attachment: fixed;
   }
 
-  .dark body {
-    background: linear-gradient(135deg, #061728 0%, #060b19 100%);
-    background-attachment: fixed;
+  @media (min-width: 768px) {
+    body {
+      background: linear-gradient(135deg, #0a2540 0%, #1e3a8a 100%);
+      background-attachment: fixed;
+    }
+    .dark body {
+      background: linear-gradient(135deg, #0a2540 0%, #1e293b 100%);
+      background-attachment: fixed;
+    }
   }
 
   html {
