@@ -1,9 +1,16 @@
 "use client";
 import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { theme } = useTheme();
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+  };
 
   return (
     <div className={`${
@@ -23,38 +30,65 @@ export default function Home() {
                 `}
                 style={{ WebkitHeight: '100dvh' }}  
               >
-                <h1 className="text-5xl lg:text-7xl font-bold mb-4">
+                <motion.h1 {...fadeInUp} className="text-5xl lg:text-7xl font-bold mb-4">
                   NexSys Tech
-                </h1>
-                <p className={`text-base md:text-lg mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                </motion.h1>
+                <motion.p
+                  {...fadeInUp}
+                  transition={{ delay: 0.2 }}
+                  className={`text-base md:text-lg mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
+                >
                   Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
-                </p>
-                <div className="mb-6 md:hidden px-4">
+                </motion.p>
+                <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="mb-6 md:hidden px-4">
                   <img src="/Nexsys.PNG" alt="NexSys Logo" className="w-full max-w-full mx-auto" />
-                </div>
-                <div className="mb-6 md:mb-10">
+                </motion.div>
+                <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mb-6 md:mb-10">
                   <Link href="#about">
-                    <button
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      whileHover={{ scale: 1.08 }}
                       className="relative overflow-hidden px-12 py-4 min-w-[10rem] rounded-full font-bold text-lg shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-500 text-white transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-600 group"
                     >
                       <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Get Started</span>
-                      {/* glossy animated overlay */}
+                      {/* Glossy animated overlay */}
                       <span className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                         <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full" style={{transitionProperty: 'top, background'}} />
                       </span>
-                    </button>
+                      {/* Border and background transition on hover */}
+                      <style jsx>{`
+                        .group:hover {
+                          border-color: #fff !important;
+                          background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%) !important;
+                        }
+                      `}</style>
+                    </motion.button>
                   </Link>
-                </div>
+                </motion.div>
               </div>
 
               {/* what we offer section */}
-              <div className="mt-12">
-                <div className="mb-12">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mt-12"
+              >
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-12"
+                >
                   <h2 className="text-xl md:text-2xl font-bold mb-3">
                     What We Offer
                   </h2>
                   <div className={`h-1 w-64 mx-auto rounded ${theme === "dark" ? "bg-white" : "bg-gray-900"}`} />
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
                   {[
@@ -116,20 +150,25 @@ export default function Home() {
                       ),
                     },
                   ].map((item, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className={`group p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 w-full max-w-full`}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7, delay: index * 0.2 }}
+                      whileHover={{ y: -8, rotate: -2 + index * 2, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
+                      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 w-full max-w-full`}
                     >
                       <div
-                        className={`h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center ${
+                        className={`h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out ${
                           theme === "dark" ? "bg-black/80" : "bg-blue-100/70"
                         } backdrop-blur-lg`}
                       >
                         <div
-                          className={`p-3 mb-4 rounded-full shadow-md ${
+                          className={`p-3 mb-4 rounded-full transition-all duration-300 ease-in-out shadow-md ${
                             theme === "dark"
-                              ? "bg-slate-700"
-                              : "bg-slate-200"
+                              ? "bg-slate-700 group-hover:bg-blue-600/80"
+                              : "bg-slate-200 group-hover:bg-blue-500/80"
                           }`}
                         >
                           {item.icon}
@@ -145,10 +184,10 @@ export default function Home() {
                           {item.description}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
               {/* end what we offer section */}
             </div>
           </div>

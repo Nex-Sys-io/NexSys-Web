@@ -1,5 +1,6 @@
 "use client";
 import { useTheme } from "../context/ThemeContext";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {
@@ -79,8 +80,13 @@ function TeamMember({ member, index }) {
     const { theme } = useTheme();
     
     return (
-      <div
-        className={`group p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        whileHover={{ y: -10, scale: 1.04, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
+        className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
       >
         <div
           className={`h-full w-full p-8 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out ${
@@ -136,7 +142,7 @@ function TeamMember({ member, index }) {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
   
@@ -152,24 +158,39 @@ export default function About() {
       <main className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
           {/* mission section */}
-          <div className="mx-auto mb-20 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto mb-20 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
+          >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Mission</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* team section */}
-          <div className="mt-20">
-            <h2 className="text-4xl md:text-4xl font-bold text-center mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-4xl font-bold text-center mb-6"
+            >
               Meet Our Team
-            </h2>
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <TeamMember key={member.name} member={member} index={index} />
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </div>

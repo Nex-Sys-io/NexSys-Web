@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+import { motion } from "framer-motion";
 // removed: import projectsurvey from "../components/projectsurvey";
 
 const projects = {
@@ -50,8 +51,13 @@ function ProjectCard({ project, index }) {
   const { theme } = useTheme();
   
   return (
-    <div
-      className={`group p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ y: -10, scale: 1.04, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
+      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
     >
       <div
         className={`h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out ${
@@ -104,7 +110,7 @@ function ProjectCard({ project, index }) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -121,12 +127,16 @@ export default function Projects() {
     }`}>
       <main className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
+          >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Projects</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Explore our diverse range of projects, from innovative products to cutting-edge services. Each project reflects our commitment to excellence in design, development, and problem-solving.</p>
             </div>
-          </div>
+          </motion.div>
 
           <div className="flex justify-center mb-8 space-x-4">
             <button
@@ -161,11 +171,16 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className={`mx-auto mt-20 max-w-4xl p-0.5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 shadow-xl`}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className={`mx-auto mt-20 max-w-4xl p-0.5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 shadow-xl`}
+          >
             <div className={`rounded-2xl p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center w-full`}> 
               <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Have a Project in Mind?</h2>
               <p className="mb-4 text-sm font-medium text-blue-900 dark:text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
-              <button
+              <motion.button
                 onClick={() => {
                   // redirect to the contact section
                   const contactSection = document.getElementById('contact');
@@ -173,13 +188,14 @@ export default function Projects() {
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
+                whileHover={{ scale: 1.07 }}
                 className="relative inline-block px-10 py-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-500 text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden"
               >
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Start a Project</span>
                 <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full z-0 pointer-events-none" style={{transitionProperty: 'top, background'}} />
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </div>

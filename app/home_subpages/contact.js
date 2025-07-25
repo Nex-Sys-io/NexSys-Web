@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "../context/ThemeContext";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const { theme } = useTheme();
@@ -97,24 +98,38 @@ export default function Contact() {
       <main className="pt-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* page header */}
-          <div className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl"
+          >
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
               <h1 className={`text-3xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
               <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Interested in learning more? We'd love to connect with you.</p>
             </div>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* left panel: contact info */}
-            <div className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
+            >
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg flex flex-col justify-center text-center`}>
                 <h2 className={`text-2xl md:text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
                 <p className={`mb-10 text-lg ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Reach out through any of the platforms below or send us a message directly.</p>
                 <div className="space-y-6">
                   {contactInfo.map((info, idx) => (
-                    <div
+                    <motion.div
                       key={info.title}
-                      className={`group flex items-center space-x-4 p-4 rounded-xl shadow-md transition-all duration-300 ${theme === 'dark' ? 'bg-slate-800/90' : 'bg-white/90 border border-blue-100'}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      whileHover={{ y: -6, scale: 1.04, boxShadow: '0 8px 24px 0 rgba(0, 176, 255, 0.12)' }}
+                      className={`group flex items-center space-x-4 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${theme === 'dark' ? 'bg-slate-800/90' : 'bg-white/90 border border-blue-100'}`}
                     >
                       <div className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 ${theme === 'dark' ? 'bg-blue-900' : 'bg-blue-100'}`}> 
                         <span className={`${theme === 'dark' ? 'text-white' : 'text-blue-700'} text-2xl`}>{info.icon}</span>
@@ -123,14 +138,19 @@ export default function Contact() {
                         <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>{info.title}</h3>
                         <p className={`text-base ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>{info.value}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* right panel: contact form */}
-            <div className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
+            >
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg`}>
                 <h2 className={`text-2xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -153,31 +173,40 @@ export default function Contact() {
                     <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required placeholder="Your message..." className={`${inputClasses} resize-none`} />
                   </div>
                   <div>
-                    <button
+                    <motion.button
                       type="submit"
                       disabled={isSubmitting}
+                      whileHover={{ scale: 1.05 }}
                       className={`relative w-full py-4 px-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-500 dark:from-blue-700 dark:via-blue-500 dark:to-cyan-500 ${theme === 'dark' ? 'text-white' : 'text-white'} transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden ${
                         isSubmitting ? "bg-gray-400 text-white cursor-not-allowed border-gray-400" : ""
                       }`}
                     >
                       <span className="relative z-10 transition-colors duration-300 group-hover:text-white">{isSubmitting ? "Sending..." : "Send Message"}</span>
                       <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full z-0 pointer-events-none" style={{transitionProperty: 'top, background'}} />
-                    </button>
+                    </motion.button>
                     {/* success & error messages */}
                     {submitStatus === "success" && (
-                      <p className="mt-4 text-green-500 text-center">
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="mt-4 text-green-500 text-center"
+                      >
                         Message sent successfully!
-                      </p>
+                      </motion.p>
                     )}
                     {submitStatus === "error" && (
-                      <p className="mt-4 text-red-500 text-center">
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="mt-4 text-red-500 text-center"
+                      >
                         Oops! Something went wrong. Please try again.
-                      </p>
+                      </motion.p>
                     )}
                   </div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </main>
