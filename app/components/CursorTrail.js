@@ -47,7 +47,7 @@ export default function CursorTrail() {
     };
   }, [isDesktop, isEnabled]);
 
-  // frame loop: do multiple chase+push steps per rAF
+  // frame loop: do multiple chase+push steps per raf
   useEffect(() => {
     let frameId;
     const loop = () => {
@@ -75,7 +75,7 @@ export default function CursorTrail() {
     return () => cancelAnimationFrame(frameId);
   }, [isDesktop, isEnabled]);
 
-  // Catmull-Rom → Bézier
+  // catmull-rom → bézier
   const generateSmoothPath = (pts) => {
     if (pts.length < 2) return '';
     let d = `M ${pts[0].x} ${pts[0].y}`;
@@ -93,7 +93,7 @@ export default function CursorTrail() {
     return d;
   };
 
-  // Moving average smoothing for points
+  // moving average smoothing for points
   function smoothPoints(points, windowSize = 6) {
     if (points.length < 2) return points;
     const smoothed = [];

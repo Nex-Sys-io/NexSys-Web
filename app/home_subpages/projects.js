@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-import ProjectSurvey from "../components/ProjectSurvey";
+// removed: import projectsurvey from "../components/projectsurvey";
 
 const projects = {
   Products: [
@@ -166,7 +166,13 @@ export default function Projects() {
               <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Have a Project in Mind?</h2>
               <p className="mb-4 text-sm font-medium text-blue-900 dark:text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
               <button
-                onClick={() => setIsSurveyOpen(true)}
+                onClick={() => {
+                  // redirect to the contact section
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="relative inline-block px-10 py-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-500 text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden"
               >
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Start a Project</span>
@@ -176,11 +182,6 @@ export default function Projects() {
           </div>
         </div>
       </main>
-
-      <ProjectSurvey 
-        isOpen={isSurveyOpen} 
-        onClose={() => setIsSurveyOpen(false)} 
-      />
     </div>
   );
 }

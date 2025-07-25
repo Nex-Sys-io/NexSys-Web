@@ -11,10 +11,10 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Send email using Resend
+    // send email using resend
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // Must be a verified domain in Resend
-      to: 'darshp717@gmail.com', // Your email where messages will be received
+      from: 'onboarding@resend.dev', // must be a verified domain in resend
+      to: 'darshp717@gmail.com', // your email where messages will be received
       subject: `New Contact Form Submission: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });

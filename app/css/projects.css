@@ -42,14 +42,14 @@
   }
 
   .bg-gray-800 {
-    background-color: rgb(3, 27, 13); /* Dark blue background */
-    border: 3px solid rgb(255, 255, 255); /* White glowing border */
-    box-shadow: 0 0 10px rgba(255, 255, 255); /* Subtle glow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    background-color: rgb(3, 27, 13); /* dark blue background */
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(255, 255, 255);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .bg-gray-800:hover {
-    transform: scale(1.05); /* Slight hover zoom */
-    box-shadow: 0 0 20px rgba(255, 255, 255); /* Stronger glow on hover */
+    transform: scale(1.05); /* slight hover zoom */
+    box-shadow: 0 0 20px rgba(255, 255, 255);
   }
   

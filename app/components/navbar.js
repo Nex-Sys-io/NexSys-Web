@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "../context/ThemeContext";
-// import { motion, AnimatePresence } from "framer-motion";
+// import { motion, animatepresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* desktop nav */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#about"
@@ -74,7 +74,7 @@ export default function Navbar() {
               Contact
             </Link>
             
-            {/* Theme Toggle Button */}
+            {/* theme toggle button */}
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-lg transition-colors duration-200 ${
@@ -95,7 +95,7 @@ export default function Navbar() {
             </button>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -107,7 +107,7 @@ export default function Navbar() {
             >
               {isMenuOpen ? (
                 <svg
-                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // Ensures visibility in both themes
+                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // ensures visibility in both themes
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -119,7 +119,7 @@ export default function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // Ensures visibility in both themes
+                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // same comment as above
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -135,7 +135,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* mobile hamburger menu */}
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
@@ -164,7 +164,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
             >
-              {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              {theme === 'dark' ? 'switch to light mode' : 'switch to dark mode'}
             </button>
           </div>
         </div>

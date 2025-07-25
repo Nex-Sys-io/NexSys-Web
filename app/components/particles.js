@@ -3,6 +3,7 @@
 import { cn } from "../lib/utils";
 import React, { useEffect, useRef, useState } from "react";
 
+// utility hook to get mouse position
 function MousePosition() {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -24,6 +25,7 @@ function MousePosition() {
   return mousePosition;
 }
 
+// utility to convert hex to rgb
 function hexToRgb(hex) {
   hex = hex.replace("#", "");
 

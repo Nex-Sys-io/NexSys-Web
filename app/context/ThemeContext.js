@@ -4,7 +4,7 @@ import { Particles } from '../components/particles';
 
 const ThemeContext = createContext();
 
-// Utility hook to detect mobile devices
+// utility hook to detect mobile devices
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {

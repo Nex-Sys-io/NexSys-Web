@@ -151,7 +151,7 @@ export default function About() {
     }`}>
       <main className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
-          {/* Mission Section */}
+          {/* mission section */}
           <div className="mx-auto mb-20 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl">
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Mission</h1>
@@ -159,7 +159,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Team Section */}
+          {/* team section */}
           <div className="mt-20">
             <h2 className="text-4xl md:text-4xl font-bold text-center mb-6">
               Meet Our Team

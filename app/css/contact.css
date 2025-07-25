@@ -45,8 +45,8 @@
 .label-custom3 {
     display: block;
     font-weight: bold;
-    margin-bottom: 8px; /* Adds space between the label and the input */
-    text-align: left; /* Aligns the label text to the left */
+    margin-bottom: 8px;
+    text-align: left;
   }
   
   /* Input and Textarea Customization */
@@ -76,9 +76,9 @@
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15),
       inset 0 0 10px rgba(255, 255, 255, 0.1);
-    border: 3px solid #ffffff; /* white border for emphasis */
-    color: white; /* ensure text contrast */
-    text-align: left; /* aligns content to the left */
+    border: 3px solid #ffffff;
+    color: white; 
+    text-align: left;
     transition: transform 0.3s ease;
   }
   

@@ -13,7 +13,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  // UPDATED: Real POST request to /api/contact, instead of simulating delay
+  // updated: real post request to /api/contact, instead of simulating delay
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -35,12 +35,12 @@ export default function Contact() {
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
 
-      // Hide success message after 3 seconds
+      // hide success message after 3 seconds
       setTimeout(() => setSubmitStatus(null), 3000);
     } catch (error) {
       console.error("Error:", error);
       setSubmitStatus("error");
-      // Optionally hide error after a few seconds:
+      // optionally hide error after a few seconds:
       setTimeout(() => setSubmitStatus(null), 3000);
     }
 
@@ -85,7 +85,7 @@ export default function Contact() {
     }
   ];
 
-  // Original minimal input styling
+  // original minimal input styling
   const inputClasses = `mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm ${
     theme === "dark"
       ? "border-gray-600 text-white placeholder-gray-400 bg-slate-900/60"
@@ -96,7 +96,7 @@ export default function Contact() {
     <div className={`${theme === "dark" ? "bg-gray-900/0" : "bg-gray-50/50"}`}>
       <main className="pt-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Page Header */}
+          {/* page header */}
           <div className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl">
             <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
               <h1 className={`text-3xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
@@ -105,7 +105,7 @@ export default function Contact() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Left Panel: Contact Info */}
+            {/* left panel: contact info */}
             <div className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl">
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg flex flex-col justify-center text-center`}>
                 <h2 className={`text-2xl md:text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
@@ -129,7 +129,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right Panel: Contact Form */}
+            {/* right panel: contact form */}
             <div className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl">
               <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg`}>
                 <h2 className={`text-2xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
@@ -163,7 +163,7 @@ export default function Contact() {
                       <span className="relative z-10 transition-colors duration-300 group-hover:text-white">{isSubmitting ? "Sending..." : "Send Message"}</span>
                       <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full z-0 pointer-events-none" style={{transitionProperty: 'top, background'}} />
                     </button>
-                    {/* Success & Error Messages */}
+                    {/* success & error messages */}
                     {submitStatus === "success" && (
                       <p className="mt-4 text-green-500 text-center">
                         Message sent successfully!
