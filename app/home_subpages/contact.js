@@ -87,7 +87,7 @@ export default function Contact() {
   ];
 
   // original minimal input styling
-  const inputClasses = "mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm border-gray-600 text-white placeholder-gray-400 bg-slate-900/60";
+  const inputClasses = "mt-2 block w-full rounded-2xl border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm border-gray-600 text-white placeholder-gray-400 bg-slate-900/60";
 
   return (
     <div className="bg-gray-900/0 text-white">
