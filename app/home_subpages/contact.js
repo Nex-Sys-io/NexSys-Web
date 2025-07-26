@@ -87,14 +87,10 @@ export default function Contact() {
   ];
 
   // original minimal input styling
-  const inputClasses = `mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm ${
-    theme === "dark"
-      ? "border-gray-600 text-white placeholder-gray-400 bg-slate-900/60"
-      : "border-gray-300 text-gray-900 placeholder-gray-500 bg-white/80"
-  }`;
+  const inputClasses = "mt-2 block w-full rounded-lg border px-4 py-3 bg-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base font-medium shadow-sm border-gray-600 text-white placeholder-gray-400 bg-slate-900/60";
 
   return (
-    <div className={`${theme === "dark" ? "bg-gray-900/0" : "bg-gray-50/50"}`}>
+    <div className="bg-gray-900/0 text-white">
       <main className="pt-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* page header */}
@@ -103,9 +99,9 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 shadow-xl"
           >
-            <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
-              <h1 className={`text-3xl md:text-4xl font-extrabold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Get in Touch</h1>
-              <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Interested in learning more? We'd love to connect with you.</p>
+            <div className="rounded-[15px] p-10 bg-black/80 backdrop-blur-lg text-center"> 
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 text-white">Get in Touch</h1>
+              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">Interested in learning more? We'd love to connect with you.</p>
             </div>
           </motion.div>
 
@@ -117,9 +113,9 @@ export default function Contact() {
               viewport={{ once: true }}
               className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
-              <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg flex flex-col justify-center text-center`}>
-                <h2 className={`text-2xl md:text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Let's Connect</h2>
-                <p className={`mb-10 text-lg ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Reach out through any of the platforms below or send us a message directly.</p>
+              <div className="h-full w-full rounded-2xl p-8 bg-black/80 backdrop-blur-lg flex flex-col justify-center text-center">
+                <h2 className="text-2xl md:text-4xl font-bold mb-2 text-white">Let's Connect</h2>
+                <p className="mb-10 text-lg text-blue-100">Reach out through any of the platforms below or send us a message directly.</p>
                 <div className="space-y-6">
                   {contactInfo.map((info, idx) => (
                     <motion.div
@@ -129,14 +125,14 @@ export default function Contact() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       whileHover={{ y: -6, scale: 1.04, boxShadow: '0 8px 24px 0 rgba(0, 176, 255, 0.12)' }}
-                      className={`group flex items-center space-x-4 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${theme === 'dark' ? 'bg-slate-800/90' : 'bg-white/90 border border-blue-100'}`}
+                      className="group flex items-center space-x-4 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-slate-800/90"
                     >
-                      <div className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 ${theme === 'dark' ? 'bg-blue-900' : 'bg-blue-100'}`}> 
-                        <span className={`${theme === 'dark' ? 'text-white' : 'text-blue-700'} text-2xl`}>{info.icon}</span>
+                      <div className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 bg-blue-900"> 
+                        <span className="text-white text-2xl">{info.icon}</span>
                       </div>
                       <div className="text-left">
-                        <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>{info.title}</h3>
-                        <p className={`text-base ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>{info.value}</p>
+                        <h3 className="text-lg font-semibold text-blue-200">{info.title}</h3>
+                        <p className="text-base text-blue-100">{info.value}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -151,25 +147,25 @@ export default function Contact() {
               viewport={{ once: true }}
               className="p-0.5 rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 shadow-xl"
             >
-              <div className={`h-full w-full rounded-2xl p-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg`}>
-                <h2 className={`text-2xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>Contact Us</h2>
+              <div className="h-full w-full rounded-2xl p-8 bg-black/80 backdrop-blur-lg">
+                <h2 className="text-2xl md:text-4xl font-bold mb-3 text-white">Contact Us</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Name</label>
+                      <label htmlFor="name" className="block text-sm font-medium text-blue-200">Name</label>
                       <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" className={inputClasses} />
                     </div>
                     <div>
-                      <label htmlFor="email" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Email</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-blue-200">Email</label>
                       <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="you@example.com" className={inputClasses} />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="subject" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Subject</label>
+                    <label htmlFor="subject" className="block text-sm font-medium text-blue-200">Subject</label>
                     <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required placeholder="Subject" className={inputClasses} />
                   </div>
                   <div>
-                    <label htmlFor="message" className={`block text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'}`}>Message</label>
+                    <label htmlFor="message" className="block text-sm font-medium text-blue-200">Message</label>
                     <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required placeholder="Your message..." className={`${inputClasses} resize-none`} />
                   </div>
                   <div>
@@ -177,7 +173,7 @@ export default function Contact() {
                       type="submit"
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.05 }}
-                      className={`relative w-full py-4 px-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-500 dark:from-blue-700 dark:via-blue-500 dark:to-cyan-500 ${theme === 'dark' ? 'text-white' : 'text-white'} transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden ${
+                      className={`relative w-full py-4 px-4 rounded-full font-bold shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-500 text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-600 group overflow-hidden ${
                         isSubmitting ? "bg-gray-400 text-white cursor-not-allowed border-gray-400" : ""
                       }`}
                     >

@@ -1,13 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "../context/ThemeContext";
 // import { motion, animatepresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,22 +18,12 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 ${
-        theme === 'dark'
-          ? 'bg-gray-900/30 shadow-lg'
-          : 'bg-white shadow-lg'
-      }`}
-    >
+    <header className="fixed top-0 w-full z-50 bg-gray-900/30 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className={`text-2xl font-bold ${
-                theme === 'dark' 
-                  ? 'text-white' 
-                  : 'text-gray-900'
-              }`}>
+              <span className="text-2xl font-bold text-white">
                 NexSys
               </span>
             </Link>
@@ -45,69 +33,33 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#about"
-              className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
-                theme === 'dark' 
-                  ? 'text-gray-100 after:bg-blue-400' 
-                  : 'text-gray-600 after:bg-blue-600'
-              }`}
+              className="text-gray-100 transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400"
             >
               About
             </Link>
             <Link
               href="#projects"
-              className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
-                theme === 'dark' 
-                  ? 'text-gray-100 after:bg-blue-400' 
-                  : 'text-gray-600 after:bg-blue-600'
-              }`}
+              className="text-gray-100 transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className={`transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
-                theme === 'dark' 
-                  ? 'text-gray-100 after:bg-blue-400' 
-                  : 'text-gray-600 after:bg-blue-600'
-              }`}
+              className="text-gray-100 transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400"
             >
               Contact
             </Link>
-            
-            {/* theme toggle button */}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-colors duration-200 ${
-                isScrolled
-                  ? "hover:bg-gray-200 dark:hover:bg-gray-700"
-                  : "hover:bg-white/10"
-              }`}
-            >
-              {theme === 'dark' ? (
-                <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
           </nav>
 
           {/* mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className={`p-2 rounded-lg transition-colors duration-200 ${
-                isScrolled
-                  ? "hover:bg-gray-200 dark:hover:bg-gray-700"
-                  : "hover:bg-white/10"
-              }`}
+              className="p-2 rounded-lg transition-colors duration-200 hover:bg-white/10"
             >
               {isMenuOpen ? (
                 <svg
-                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // ensures visibility in both themes
+                  className="w-6 h-6 text-gray-300"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -119,7 +71,7 @@ export default function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-gray-900 dark:text-gray-300" // same comment as above
+                  className="w-6 h-6 text-gray-300"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -138,34 +90,28 @@ export default function Navbar() {
       {/* mobile hamburger menu */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900 shadow-lg">
             <Link
               href="#about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
               onClick={toggleMenu}
             >
               About
             </Link>
             <Link
               href="#projects"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
               onClick={toggleMenu}
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
               onClick={toggleMenu}
             >
               Contact
             </Link>
-            <button
-              onClick={toggleTheme}
-              className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800"
-            >
-              {theme === 'dark' ? 'switch to light mode' : 'switch to dark mode'}
-            </button>
           </div>
         </div>
       )}

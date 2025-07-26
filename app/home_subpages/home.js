@@ -1,10 +1,8 @@
 "use client";
-import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const { theme } = useTheme();
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -13,11 +11,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`${
-      theme === 'dark' 
-        ? 'bg-gray-900/0 text-white' 
-        : 'bg-gray-50/50 text-gray-900'
-    } relative overflow-hidden min-h-screen`}>
+    <div className="bg-gray-900/0 text-white relative overflow-hidden min-h-screen">
       <main className="py-2 px-4 sm:px-6 lg:px-4 relative z-10">
         <section className="relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +30,7 @@ export default function Home() {
                 <motion.p
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
-                  className={`text-base md:text-lg mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}
+                  className="text-base md:text-lg mb-4 text-gray-300"
                 >
                   Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
                 </motion.p>
@@ -87,7 +81,7 @@ export default function Home() {
                   <h2 className="text-xl md:text-2xl font-bold mb-3">
                     What We Offer
                   </h2>
-                  <div className={`h-1 w-64 mx-auto rounded ${theme === "dark" ? "bg-white" : "bg-gray-900"}`} />
+                  <div className="h-1 w-64 mx-auto rounded bg-white" />
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
@@ -97,7 +91,7 @@ export default function Home() {
                       description: "We tailor AI technologies to meet your specific business needs and challenges.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
+                          className="w-10 h-10 text-blue-300 group-hover:text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -116,7 +110,7 @@ export default function Home() {
                       description: "Our software solutions are built for growth and scalability, ensuring long-term value.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
+                          className="w-10 h-10 text-blue-300 group-hover:text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -135,7 +129,7 @@ export default function Home() {
                       description: "We provide continuous support to ensure smooth implementation and operation.",
                       icon: (
                         <svg
-                          className={`w-10 h-10 ${theme === "dark" ? "text-blue-300 group-hover:text-white" : "text-blue-600 group-hover:text-white"}`}
+                          className="w-10 h-10 text-blue-300 group-hover:text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -160,27 +154,19 @@ export default function Home() {
                       className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 w-full max-w-full`}
                     >
                       <div
-                        className={`h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out ${
-                          theme === "dark" ? "bg-black/80" : "bg-blue-100/70"
-                        } backdrop-blur-lg`}
+                        className="h-full w-full p-6 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
                       >
                         <div
-                          className={`p-3 mb-4 rounded-full transition-all duration-300 ease-in-out shadow-md ${
-                            theme === "dark"
-                              ? "bg-slate-700 group-hover:bg-blue-600/80"
-                              : "bg-slate-200 group-hover:bg-blue-500/80"
-                          }`}
+                          className="p-3 mb-4 rounded-full transition-all duration-300 ease-in-out shadow-md bg-slate-700 group-hover:bg-blue-600/80"
                         >
                           {item.icon}
                         </div>
                         <h3
-                          className={`text-xl font-semibold mb-2 ${
-                            theme === "dark" ? "text-white" : "text-gray-900"
-                          }`}
+                          className="text-xl font-semibold mb-2 text-white"
                         >
                           {item.title}
                         </h3>
-                        <p className={`text-sm ${theme === "dark" ? "text-blue-100" : "text-gray-700"}`}>
+                        <p className="text-sm text-blue-100">
                           {item.description}
                         </p>
                       </div>

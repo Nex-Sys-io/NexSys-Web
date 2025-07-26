@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 // removed: import projectsurvey from "../components/projectsurvey";
 
@@ -48,8 +47,6 @@ const projects = {
 };
 
 function ProjectCard({ project, index }) {
-  const { theme } = useTheme();
-  
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -60,9 +57,7 @@ function ProjectCard({ project, index }) {
       className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
     >
       <div
-        className={`h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out ${
-          theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'
-        } backdrop-blur-lg`}
+        className="h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
       >
         <div className="relative w-full h-48 mb-6 overflow-hidden rounded-t-[15px]">
           <img
@@ -81,14 +76,10 @@ function ProjectCard({ project, index }) {
           </span>
         </div>
         <div className="p-6 pt-2 flex flex-col flex-1">
-          <h3 className={`text-2xl font-bold mb-2 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h3 className="text-2xl font-bold mb-2 text-white">
             {project.title}
           </h3>
-          <p className={`mb-4 text-base ${
-            theme === 'dark' ? 'text-blue-100' : 'text-blue-900'
-          }`}>
+          <p className="mb-4 text-base text-blue-100">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2 justify-center mb-2">
@@ -115,16 +106,11 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
-  const { theme } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState("Products");
   const [isSurveyOpen, setIsSurveyOpen] = useState(false);
 
   return (
-    <div className={`${
-      theme === 'dark' 
-        ? 'bg-gray-900/0 text-white' 
-        : 'bg-gray-50/50 text-gray-900'
-    }`}>
+    <div className="bg-gray-900/0 text-white">
       <main className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
@@ -132,9 +118,9 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             className="mx-auto mb-12 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
           >
-            <div className={`rounded-[15px] p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center`}> 
+            <div className="rounded-[15px] p-10 bg-black/80 backdrop-blur-lg text-center"> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Projects</h1>
-              <p className={`text-base max-w-2xl mx-auto font-medium ${theme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>Explore our diverse range of projects, from innovative products to cutting-edge services. Each project reflects our commitment to excellence in design, development, and problem-solving.</p>
+              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">Explore our diverse range of projects, from innovative products to cutting-edge services. Each project reflects our commitment to excellence in design, development, and problem-solving.</p>
             </div>
           </motion.div>
 
@@ -143,9 +129,7 @@ export default function Projects() {
               className={`px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 ${
                 selectedCategory === "Products"
                   ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white scale-105 border-blue-600"
-                  : theme === "dark"
-                  ? "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
-                  : "bg-slate-200 text-blue-700 hover:bg-blue-500 hover:text-white border-blue-200"
+                  : "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
               }`}
               onClick={() => setSelectedCategory("Products")}
             >
@@ -155,9 +139,7 @@ export default function Projects() {
               className={`px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 ${
                 selectedCategory === "Services"
                   ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white scale-105 border-blue-600"
-                  : theme === "dark"
-                  ? "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
-                  : "bg-slate-200 text-blue-700 hover:bg-blue-500 hover:text-white border-blue-200"
+                  : "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
               }`}
               onClick={() => setSelectedCategory("Services")}
             >
@@ -177,9 +159,9 @@ export default function Projects() {
             viewport={{ once: true }}
             className={`mx-auto mt-20 max-w-4xl p-0.5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 shadow-xl`}
           >
-            <div className={`rounded-2xl p-10 ${theme === 'dark' ? 'bg-black/80' : 'bg-blue-100/70'} backdrop-blur-lg text-center w-full`}> 
+            <div className="rounded-2xl p-10 bg-black/80 backdrop-blur-lg text-center w-full"> 
               <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Have a Project in Mind?</h2>
-              <p className="mb-4 text-sm font-medium text-blue-900 dark:text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
+              <p className="mb-4 text-sm font-medium text-blue-100">Let's discuss how we can help bring your ideas to life with our expertise in AI and software development.</p>
               <motion.button
                 onClick={() => {
                   // redirect to the contact section

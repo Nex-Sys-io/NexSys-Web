@@ -8,11 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <title>NexSys</title>
         <link rel="icon" href="/Nexsys.PNG" type="image/png" sizes="64x64"/>
-        <meta name="color-scheme" content="light dark" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>

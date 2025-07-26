@@ -21,30 +21,22 @@ function useIsMobile() {
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark');
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    // Always set dark mode
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: 'dark' }}>
       {isMobile && (
         <Particles
           className="fixed inset-0 -z-10 animate-fade-in"
           quantity={200}
           staticity={30}
-          color={theme === 'dark' ? '#ffffff' : '#000000'}
+          color="#ffffff"
           ease={100}
         />
       )}

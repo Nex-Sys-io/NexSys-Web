@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
 
 const socialLinks = [
   { title: "Twitter", link: "https://x.com/NexsysTech", icon: "/twitter.png" },
@@ -11,7 +10,6 @@ const socialLinks = [
 ];
 
 function SocialLink({ link, icon, title }) {
-  const { theme } = useTheme();
   return (
     <motion.a
       href={link}
@@ -26,9 +24,7 @@ function SocialLink({ link, icon, title }) {
         alt={`${title} icon`} 
         className="w-8 h-8 sm:w-10 sm:h-10 object-contain filter hover:brightness-125" 
       />
-      <span className={`text-xs sm:text-sm font-medium ${
-        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-      }`}>
+      <span className="text-xs sm:text-sm font-medium text-gray-300">
         {title}
       </span>
     </motion.a>
@@ -36,12 +32,8 @@ function SocialLink({ link, icon, title }) {
 }
 
 export default function Footer() {
-  const { theme } = useTheme();
-  
   return (
-    <footer className={`${
-      theme === 'dark' ? 'bg-gray-900/30 text-white' : 'bg-white text-gray-900'
-    } w-full py-6 px-4 sm:px-6 lg:px-8`}> 
+    <footer className="bg-gray-900/30 text-white w-full py-6 px-4 sm:px-6 lg:px-8"> 
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="flex flex-wrap justify-center gap-10 sm:gap-6">
           {socialLinks.map((social) => (
@@ -49,9 +41,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-4 text-center">
-          <p className={`text-xs sm:text-sm ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-          }`}>
+          <p className="text-xs sm:text-sm text-gray-400">
             &copy; {new Date().getFullYear()} NexSys. All rights reserved.
           </p>
         </div>
