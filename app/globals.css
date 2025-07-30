@@ -41,12 +41,14 @@
   body {
     @apply bg-background text-foreground antialiased;
     overflow-x: hidden;
+    /* Default background for mobile */
     background: rgb(2, 9, 43);
   }
 
+  /* Gradient background for laptop and ultrawide screens */
   @media (min-width: 768px) {
     body {
-      background: rgba(2, 9, 43);
+      background: transparent;
       background-attachment: fixed;
     }
   }

@@ -3,6 +3,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
+import GradientBackground from "./components/GradientBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
+          <GradientBackground />
           <div className="flex flex-col min-h-screen">
             <div className="flex-grow">
               {children}
