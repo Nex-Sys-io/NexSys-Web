@@ -24,7 +24,7 @@ export function ThemeProvider({ children }) {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Always set dark mode
+    // always set dark mode
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   }, []);

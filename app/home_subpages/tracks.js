@@ -19,8 +19,8 @@ export default function Tracks() {
             <div className="p-4 flex flex-col items-center w-64 rounded-lg border-transparent
              hover:border-white/20 hover:shadow-lg backdrop-blur-sm cursor-default transition-all duration-300 " data-aos="fade-up">
                 {children}
-                <h1 className="text-2xl mb-1 uppercase font-extrabold light-mode-text">{title}</h1> {/* Apply class here */}
-                <p className="text-center mb-5 font-medium light-mode-text">{desc}</p> {/* Apply class here */}
+                <h1 className="text-2xl mb-1 uppercase font-extrabold light-mode-text">{title}</h1>
+                <p className="text-center mb-5 font-medium light-mode-text">{desc}</p> 
             </div>
         );
     }

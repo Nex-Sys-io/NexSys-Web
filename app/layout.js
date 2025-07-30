@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import GradientBackground from "./components/GradientBackground";
+import { structuredData } from "./metadata";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,8 +12,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
-        <title>NexSys</title>
         <link rel="icon" href="/Nexsys.PNG" type="image/png" sizes="64x64"/>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>

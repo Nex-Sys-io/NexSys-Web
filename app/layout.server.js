@@ -1,7 +1,7 @@
 import ClientLayout from './layout';
-import { metadata, viewport } from './metadata';
+import { metadata, structuredData } from './metadata';
 
-export { metadata, viewport };
+export { metadata };
 
 export default function RootLayout({ children }) {
   return <ClientLayout>{children}</ClientLayout>;

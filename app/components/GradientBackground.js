@@ -20,48 +20,15 @@ export default function GradientBackground() {
 
   return (
     <div className="fixed inset-0 -z-10">
-      {/* Home section gradient */}
+      {/* Single consistent gradient background */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 w-full h-full"
         style={{
           background: "radial-gradient(125% 125% at 50% 10%, #000 40%, #0077ff 100%)",
-          height: "100vh",
+          minHeight: "100vh",
           zIndex: 1
-        }}
-      />
-      
-      {/* About section gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(125% 125% at 50% 90%, #000 40%, #0077ff 100%)",
-          top: "100vh",
-          height: "100vh",
-          zIndex: 2
-        }}
-      />
-      
-      {/* Projects section gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(125% 125% at 50% 10%, #000 40%, #0077ff 100%)",
-          top: "200vh",
-          height: "100vh",
-          zIndex: 3
-        }}
-      />
-      
-      {/* Contact section gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(125% 125% at 50% 90%, #000 40%, #0077ff 100%)",
-          top: "300vh",
-          height: "100vh",
-          zIndex: 4
         }}
       />
     </div>
   );
-} 
+}

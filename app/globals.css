@@ -41,11 +41,11 @@
   body {
     @apply bg-background text-foreground antialiased;
     overflow-x: hidden;
-    /* Darker background for mobile */
+    /* darker background for mobile */
     background: rgb(4, 3, 22);
   }
 
-  /* Gradient background for laptop and ultrawide screens */
+  /* gradient background for laptop and ultrawide screens */
   @media (min-width: 768px) {
     body {
       background: transparent;
