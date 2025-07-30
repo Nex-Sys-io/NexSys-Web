@@ -145,14 +145,14 @@ export default function About() {
 
   return (
     <div className="bg-gray-900/0 text-white">
-      <main className="pt-20">
+      <main className="pt-20 2xl:pt-6 3xl:pt-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
           {/* mission section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mx-auto mb-20 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
+            className="mx-auto mb-20 2xl:mb-12 3xl:mb-8 max-w-3xl p-1 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 shadow-xl"
           >
             <div className="rounded-[15px] p-10 bg-black/80 backdrop-blur-lg text-center"> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Mission</h1>

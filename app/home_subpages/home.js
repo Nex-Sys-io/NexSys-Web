@@ -11,7 +11,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-900/0 text-white relative overflow-hidden min-h-screen">
+    <div className="bg-gray-900/0 text-white relative overflow-hidden min-h-screen 2xl:min-h-[75vh] 3xl:min-h-[65vh]">
       <main className="py-2 px-4 sm:px-6 lg:px-4 relative z-10">
         <section className="relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ export default function Home() {
                   <div className="h-1 w-64 mx-auto rounded bg-white" />
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20 2xl:pb-6 3xl:pb-4">
                   {[
                     {
                       title: "Custom AI Solutions",
