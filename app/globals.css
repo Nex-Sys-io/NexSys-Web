@@ -41,8 +41,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     overflow-x: hidden;
-    /* Default background for mobile */
-    background: rgb(2, 9, 43);
+    /* Darker background for mobile */
+    background: rgb(4, 3, 22);
   }
 
   /* Gradient background for laptop and ultrawide screens */

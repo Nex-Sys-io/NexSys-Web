@@ -18,7 +18,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gray-900/30 shadow-lg">
+    <header className="fixed top-0 w-full z-50 bg-gray-900/30 backdrop-blur-sm shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -55,11 +55,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-lg transition-colors duration-200 hover:bg-white/10"
+              className="p-2 rounded-lg transition-all duration-300 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               {isMenuOpen ? (
                 <svg
-                  className="w-6 h-6 text-gray-300"
+                  className="w-6 h-6 text-gray-300 transition-transform duration-300 rotate-180"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -71,7 +71,7 @@ export default function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-gray-300"
+                  className="w-6 h-6 text-gray-300 transition-transform duration-300"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -89,25 +89,25 @@ export default function Navbar() {
 
       {/* mobile hamburger menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900 shadow-lg">
+        <div className="md:hidden animate-in slide-in-from-top-2 duration-300">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-[rgb(4,3,22)]/95 backdrop-blur-md shadow-2xl border-t border-gray-700/50">
             <Link
               href="#about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
+              className="block px-3 py-3 rounded-lg text-base font-medium text-gray-100 hover:text-blue-300 hover:bg-white/10 transition-all duration-200 transform hover:translate-x-1"
               onClick={toggleMenu}
             >
               About
             </Link>
             <Link
               href="#projects"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
+              className="block px-3 py-3 rounded-lg text-base font-medium text-gray-100 hover:text-blue-300 hover:bg-white/10 transition-all duration-200 transform hover:translate-x-1"
               onClick={toggleMenu}
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-primary-500 hover:bg-gray-800"
+              className="block px-3 py-3 rounded-lg text-base font-medium text-gray-100 hover:text-blue-300 hover:bg-white/10 transition-all duration-200 transform hover:translate-x-1"
               onClick={toggleMenu}
             >
               Contact
