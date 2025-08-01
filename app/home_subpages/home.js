@@ -47,11 +47,11 @@ export default function Home() {
                       className="relative overflow-hidden px-12 py-4 min-w-[10rem] rounded-full font-bold text-lg shadow-xl border-2 border-blue-600 bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-500 text-white transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-600 group"
                     >
                       <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Get Started</span>
-                      {/* Glossy animated overlay */}
+                      {/* glossy animated overlay */}
                       <span className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                         <span className="absolute top-[-100%] left-0 w-full h-full bg-white/20 transition-all duration-500 group-hover:top-0 rounded-full" style={{transitionProperty: 'top, background'}} />
                       </span>
-                      {/* Border and background transition on hover */}
+                      {/* border and background transition on hover */}
                       <style jsx>{`
                         .group:hover {
                           border-color: #fff !important;

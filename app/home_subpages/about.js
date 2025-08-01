@@ -14,7 +14,7 @@ const teamMembers = [
   },
   {
     name: "Chris White",
-    role: "Founder & Advisor",
+    role: "Founder & CEO",
     image: "/chriswhite.jpeg",
     bio: "Serial Entrepreneur, guiding NexSys with strategic insights and industry knowledge.",
     links: {
@@ -72,7 +72,26 @@ const teamMembers = [
       instagram: "https://www.instagram.com/pariiii.444/",
       linkedin: "https://www.linkedin.com/in/pahaldave/",
     }
-  }
+  },
+  {
+    name: "Bazen Mekonen",
+    role: "Back End & QA Developer",
+    image: "/bazenmekonen.jpg",
+    bio: "Specialized in backend development and QA testing.",
+    links: {
+      github: "https://github.com/bazenmekonen",
+      linkedin: "https://www.linkedin.com/in/bazen-mekonen-12721a243/",
+    }
+  },
+  {
+    name: "Muskan Mohabe",
+    role: "Project Manager",
+    image: "/muskanmohabe.png",
+    bio: "Specialized in project management and team coordination.",
+    links: {
+      linkedin: "https://www.linkedin.com/in/musk-mohabe ",
+    }
+  },
 ];
 
 function TeamMember({ member, index }) {
