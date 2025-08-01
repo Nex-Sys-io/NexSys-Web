@@ -14,7 +14,7 @@ const teamMembers = [
   },
   {
     name: "Chris White",
-    role: "Founder & Advisor",
+    role: "Founder & CEO",
     image: "/chriswhite.jpeg",
     bio: "Serial Entrepreneur, guiding NexSys with strategic insights and industry knowledge.",
     links: {
