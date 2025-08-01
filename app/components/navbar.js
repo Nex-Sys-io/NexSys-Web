@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 // import { motion, animatepresence } from "framer-motion";
 
 export default function Navbar() {
@@ -22,8 +23,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">
+            <Link href="/" className="flex items-center space-x-2 group">
+              <Image
+                src="/Nexsys.PNG"
+                alt="NexSys Logo"
+                width={32}
+                height={32}
+                className="hidden md:block"
+              />
+              <span className="text-2xl font-bold text-white transition-all duration-200 group-hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 group-hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400">
                 NexSys
               </span>
             </Link>
