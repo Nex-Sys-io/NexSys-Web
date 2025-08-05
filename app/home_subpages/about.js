@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 const teamMembers = [
   {
     name: "Darsh Patel",
-    role: "DevOps & Front End Developer",
+    role: "Lead Cloud Architect & Front End Developer",
     image: "/darsh_pfp.png",
-    bio: "Specialized in cloud infrastructure and seamless UI/UX experiences.",
+    bio: "Leads cloud infrastructure and builds sleek front ends for all projects.",
     links: {
       github: "https://github.com/darshp623",
       linkedin: "https://linkedin.com/in/darshp623",
@@ -24,9 +24,9 @@ const teamMembers = [
   },
   {
     name: "Peter Gatira",
-    role: "AI & Back End Developer",
+    role: "Lead Automation Engineer & AI Developer",
     image: "/petergatira.png",
-    bio: "Specialized in backend development and AI integration.",
+    bio: "Leads automation and AI integration across the platform and all projects.",
     links: {
       github: "https://github.com/PeterGQ",
       linkedin: "https://www.linkedin.com/in/peter-gatira-039569267/",
@@ -34,9 +34,9 @@ const teamMembers = [
   },
   {
     name: "Sean Belon",
-    role: "AI & Back End Developer",
+    role: "Lead Back End & AI Developer",
     image: "/seanbelon.png",
-    bio: "Specialized in backend development and AI integration.",
+    bio: "Leads backend development and AI integration in all projects.",
     links: {
       github: "https://github.com/Dream-Yami",
       linkedin: "https://www.linkedin.com/in/sean-belon/",
@@ -46,7 +46,7 @@ const teamMembers = [
     name: "Alfonso Martinez",
     role: "Data Analyst",
     image: "/alfonsomartinez.jpeg",
-    bio: "Specialized in interpreting patterns and trends, with keen analysis.",
+    bio: "Specializes in interpreting patterns and trends, with keen analysis.",
     links: {
       github: "https://github.com/OwlFunsOh",
       linkedin: "https://www.linkedin.com/in/alfonso-sebastian-martinez/",
@@ -54,9 +54,9 @@ const teamMembers = [
   },
   {
     name: "Khang Le",
-    role: "DevOps & Back End Developer",
+    role: "Cloud Engineer & Back End Developer",
     image: "/khangle.jpg",
-    bio: "Specialized in cloud infrastructure and backend development.",
+    bio: "Assists with cloud infrastructure and backend debugging.",
     links: {
       github: "https://github.com/genghiskhang",
       linkedin: "https://www.linkedin.com/in/vinhkhle/",
@@ -77,7 +77,7 @@ const teamMembers = [
     name: "Bazen Mekonen",
     role: "Back End & QA Developer",
     image: "/bazenmekonen.jpg",
-    bio: "Specialized in backend development and QA testing.",
+    bio: "Supports backend development and QA testing.",
     links: {
       github: "https://github.com/bazenmekonen",
       linkedin: "https://www.linkedin.com/in/bazen-mekonen-12721a243/",
@@ -87,9 +87,29 @@ const teamMembers = [
     name: "Muskan Mohabe",
     role: "Project Manager",
     image: "/muskanmohabe.png",
-    bio: "Specialized in project management and team coordination.",
+    bio: "Coordinates projects and supports cross-team collaboration.",
     links: {
       linkedin: "https://www.linkedin.com/in/musk-mohabe ",
+    }
+  },
+  {
+    name: "Muskan Sahetai",
+    role: "DevOps & QA Developer",
+    image: "/musk2.jpg",
+    bio: "Helps test and manage CI/CD pipelines & applications.",
+    links: {
+      linkedin: "https://www.linkedin.com/in/muskan2502/",
+      github: "https://github.com/muskxn25",
+    }
+  },
+  {
+    name: "Gitan Elyon",
+    role: "UI/UX Designer & QA Developer",
+    image: "/gitan.jpeg",
+    bio: "Refines interfaces and tests applications.",
+    links: {
+      linkedin: "https://www.linkedin.com/in/gitanelyon/",
+      github: "https://github.com/GitanElyon",
     }
   },
 ];
