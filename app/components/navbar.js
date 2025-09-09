@@ -21,18 +21,18 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 bg-gray-900/30 backdrop-blur-sm shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2 group">
               <Image
-                src="/Nexsys.PNG"
-                alt="NexSys Logo"
-                width={32}
-                height={32}
-                className="hidden md:block"
+                src="/NexSys_Labs_logo.png"
+                alt="NexSys Labs Logo"
+                width={80}
+                height={80}
+                className="hidden md:block object-contain"
               />
               <span className="text-2xl font-bold text-white transition-all duration-200 group-hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 group-hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400">
-                NexSys
+                NexSys Labs
               </span>
             </Link>
           </div>
@@ -44,6 +44,12 @@ export default function Navbar() {
               className="text-gray-100 transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400"
             >
               About
+            </Link>
+            <Link
+              href="#advisors"
+              className="text-gray-100 transition-all duration-200 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-blue-400"
+            >
+              Advisors
             </Link>
             <Link
               href="#projects"
@@ -105,6 +111,13 @@ export default function Navbar() {
               onClick={toggleMenu}
             >
               About
+            </Link>
+            <Link
+              href="#advisors"
+              className="block px-3 py-3 rounded-lg text-base font-medium text-gray-100 hover:text-blue-300 hover:bg-white/10 transition-all duration-200 transform hover:translate-x-1"
+              onClick={toggleMenu}
+            >
+              Advisors
             </Link>
             <Link
               href="#projects"

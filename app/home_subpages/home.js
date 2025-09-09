@@ -25,15 +25,9 @@ export default function Home() {
                 style={{ WebkitHeight: '100dvh' }}  
               >
                 <motion.h1 {...fadeInUp} className="text-5xl lg:text-7xl font-bold mb-4">
-                  NexSys Tech
+                  NexSys Labs
                 </motion.h1>
-                <motion.p
-                  {...fadeInUp}
-                  transition={{ delay: 0.2 }}
-                  className="text-base md:text-lg mb-4 text-gray-300"
-                >
-                  Driving innovation with cutting-edge SaaS AI technologies to shape a smarter future.
-                </motion.p>
+                {/* subtitle removed per request */}
                 <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="mb-6 md:hidden px-4">
                   <img src="/Nexsys.PNG" alt="NexSys Logo" className="w-full max-w-full mx-auto" />
                 </motion.div>
@@ -87,8 +81,8 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20 2xl:pb-6 3xl:pb-4">
                   {[
                     {
-                      title: "Custom AI Solutions",
-                      description: "We tailor AI technologies to meet your specific business needs and challenges.",
+                      title: "AI-native Studio",
+                      description: "let us help you build out your ideas",
                       icon: (
                         <svg
                           className="w-10 h-10 text-blue-300 group-hover:text-white"
@@ -106,8 +100,8 @@ export default function Home() {
                       ),
                     },
                     {
-                      title: "Scalable SaaS Products",
-                      description: "Our software solutions are built for growth and scalability, ensuring long-term value.",
+                      title: "Research Partnerships",
+                      description: "Human-AI interface is moving incredibly fast, our lab is developing just as fast with the help of our amazing faculty partners",
                       icon: (
                         <svg
                           className="w-10 h-10 text-blue-300 group-hover:text-white"
@@ -125,8 +119,8 @@ export default function Home() {
                       ),
                     },
                     {
-                      title: "Expert Support",
-                      description: "We provide continuous support to ensure smooth implementation and operation.",
+                      title: "AI Strategy and Consulting",
+                      description: "we specialize in understanding your business and recommending high-impact AI solutions",
                       icon: (
                         <svg
                           className="w-10 h-10 text-blue-300 group-hover:text-white"
