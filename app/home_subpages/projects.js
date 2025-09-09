@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 // removed: import projectsurvey from "../components/projectsurvey";
 
@@ -8,40 +7,34 @@ const projects = {
     {
       title: "Cursive Power",
       description:
-        "Taking a pictue of cursive text and converting it to a digital format.",
+        "A human-centered handwriting engine that converts messy cursive into structured, searchable text in real time—without breaking the pen-and-paper flow.",
       image: "/cursivepower.png",
       tags: ["AI/ML", "Python", "React", "AWS"],
       link: "#",
-      status: "In Development"
+      status: "In Development",
+      logoScale: 1.4
     },
     {
       title: "Fundr",
       description:
-        "Grant Scraping Web Tool.",
+        "A tool to help entrpreneurs quickly identify funding requirements for grants and investment funds.",
       image: "/Fundr.png",
       tags: ["React", "Python", "AWS", "S3"],
       link: "#",
-      status: "In Development"
+      status: "In Development",
+      logoScale: 1
     },
   ],
   Services: [
     {
       title: "Bisyn MVP",
       description:
-        "Minimum Viable Product for Bisyn.",
+        "A patented algorithm from our partner that auto-classifies spectrographic and hyperspectral data, turning raw signals into explainable insights with an analyst-friendly UX.",
       image: "/Bisyn.png",
       tags: ["React", "Python", "Flask CORS", "AWS S3", "Vercel", "Digital Ocean"],
       link: "#",
-      status: "In Development"
-    },
-    {
-      title: "NotifyNow",
-      description:
-        "AI Automated Phone Call Response System.",
-      image: "/NotifyNow.png",
-      tags: ["Data Science", "Python", "React", "AWS"],
-      link: "#",
-      status: "In Development"
+      status: "In Development",
+      logoScale: 1.2
     },
   ],
 };
@@ -59,32 +52,34 @@ function ProjectCard({ project, index }) {
       <div
         className="h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
       >
-        <div className="relative w-full h-48 mb-6 overflow-hidden rounded-t-[15px]">
+        <div className="relative w-full mb-3 overflow-hidden rounded-t-[15px] bg-black flex items-center justify-center" style={{ height: '6.8rem' }}>
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-all duration-300 border-b-4 border-transparent group-hover:border-blue-400 group-hover:shadow-lg"
+            className="w-full h-full object-cover transition-all duration-300 border-b-4 border-transparent group-hover:border-blue-400 group-hover:shadow-lg relative z-20"
           />
-          <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold shadow-md transition-all duration-300 z-10 ${
-            project.status === 'Live'
-              ? 'bg-green-500/90 text-white'
-              : project.status === 'Beta'
-                ? 'bg-yellow-400/90 text-white'
-                : 'bg-blue-500/90 text-white'
-          }`}>
-            {project.status}
-          </span>
         </div>
-        <div className="p-6 pt-2 flex flex-col flex-1">
-          <h3 className="text-2xl font-bold mb-2 text-white">
+        <div className="p-3 pt-1 flex flex-col flex-1">
+          <div className="flex justify-end mb-1">
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold shadow-md transition-all duration-300 ${
+              project.status === 'Live'
+                ? 'bg-green-500/90 text-white'
+                : project.status === 'Beta'
+                  ? 'bg-yellow-400/90 text-white'
+                  : 'bg-blue-500/90 text-white'
+            }`}>
+              {project.status}
+            </span>
+          </div>
+          <h3 className="text-xl font-bold mb-1 text-white">
             {project.title}
           </h3>
-          <p className="mb-4 text-base text-blue-100">
+          <p className="mb-2 text-sm text-blue-100">
             {project.description}
           </p>
-          <div className="flex flex-wrap gap-2 justify-center mb-2">
+          <div className="flex flex-wrap gap-1 justify-center mb-1">
             {project.tags.map((tag) => (
-              <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-sm animate-pulse">
+              <span key={tag} className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-sm animate-pulse">
                 {tag}
               </span>
             ))}
@@ -94,7 +89,7 @@ function ProjectCard({ project, index }) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 px-5 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
+              className="inline-block mt-1 px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
             >
               View Project
             </a>
@@ -106,8 +101,8 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("Products");
-  const [isSurveyOpen, setIsSurveyOpen] = useState(false);
+  // Show all projects without category toggle
+  const allProjects = [...projects.Products, ...projects.Services];
 
   return (
     <div className="bg-gray-900/0 text-white">
@@ -120,35 +115,12 @@ export default function Projects() {
           >
             <div className="rounded-[15px] p-10 bg-black/80 backdrop-blur-lg text-center"> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Projects</h1>
-              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">Explore our diverse range of projects, from innovative products to cutting-edge services. Each project reflects our commitment to excellence in design, development, and problem-solving.</p>
+              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">We accelerate the journey from lab to launch. By partnering with research experts, we build secure and scalable AI products using multi-agent frameworks, automated application scaffolding, and a deep focus on cognitive science to create highly intuitive software.</p>
             </div>
           </motion.div>
 
-          <div className="flex justify-center mb-8 space-x-4">
-            <button
-              className={`px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 ${
-                selectedCategory === "Products"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white scale-105 border-blue-600"
-                  : "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
-              }`}
-              onClick={() => setSelectedCategory("Products")}
-            >
-              Products
-            </button>
-            <button
-              className={`px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 ${
-                selectedCategory === "Services"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white scale-105 border-blue-600"
-                  : "bg-slate-800 text-blue-300 hover:bg-blue-900 hover:text-white border-blue-700"
-              }`}
-              onClick={() => setSelectedCategory("Services")}
-            >
-              Services
-            </button>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {projects[selectedCategory].map((project, index) => (
+            {allProjects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
@@ -183,3 +155,4 @@ export default function Projects() {
     </div>
   );
 }
+

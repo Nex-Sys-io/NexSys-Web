@@ -7,18 +7,18 @@ import Footer from "./components/footer.js";
 
 export default function Main() {
   return (
-    <main className="absolute inset-0">
+    <main className="pt-24">
       <Navbar/>
-      <div id="home">
+      <div id="home" className="scroll-mt-24">
         <Home />
       </div>
-      <div id="about">
+      <div id="about" className="scroll-mt-24">
         <About />
       </div>
-      <div id="projects">
+      <div id="projects" className="scroll-mt-24">
         <Projects />
       </div>
-      <div id="contact">
+      <div id="contact" className="scroll-mt-24">
         <Contact />
       </div>
       <Footer />

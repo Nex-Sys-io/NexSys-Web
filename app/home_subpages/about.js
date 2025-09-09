@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Chris White",
     role: "Founder & CEO",
     image: "/chriswhite.jpeg",
-    bio: "Serial Entrepreneur, guiding NexSys with strategic insights and industry knowledge.",
+    bio: "Old man energy, new-school AI, he brings the gray hair and the tacos",
     links: {
       github: "https://github.com/ChrisWhiteSr",
       linkedin: "https://www.linkedin.com/in/chris-white-b2370b17/",
@@ -63,17 +63,6 @@ const teamMembers = [
     }
   },
   {
-    name: "Pahal Dave",
-    role: "Marketing & Social Media Manager",
-    image: "/pahaldave.jpg",
-    bio: "Drives brand growth with data-driven campaigns and engaging social content.",
-    links: {
-      github: "https://github.com/pahalraval",
-      instagram: "https://www.instagram.com/pariiii.444/",
-      linkedin: "https://www.linkedin.com/in/pahaldave/",
-    }
-  },
-  {
     name: "Bazen Mekonen",
     role: "Back End & QA Developer",
     image: "/bazenmekonen.jpg",
@@ -81,15 +70,6 @@ const teamMembers = [
     links: {
       github: "https://github.com/bazenmekonen",
       linkedin: "https://www.linkedin.com/in/bazen-mekonen-12721a243/",
-    }
-  },
-  {
-    name: "Muskan Mohabe",
-    role: "Project Manager",
-    image: "/muskanmohabe.png",
-    bio: "Coordinates projects and supports cross-team collaboration.",
-    links: {
-      linkedin: "https://www.linkedin.com/in/musk-mohabe ",
     }
   },
   {
@@ -114,6 +94,27 @@ const teamMembers = [
   },
 ];
 
+const advisors = [
+  {
+    name: "Ian Stockwell",
+    role: "Senior Research Advisor",
+    image: "/Stockwell.jpg",
+    bio: "Dr. Ian Stockwell's deep expertise in machine learning and predictive analytics is instrumental in architecting our data-driven products.",
+    links: {
+      linkedin: "https://www.linkedin.com/in/ian-stockwell-b1b16019/"
+    }
+  },
+  {
+    name: "Ramana Vinjamuri",
+    role: "Senior Research Advisor",
+    image: "/ramana.jpg",
+    bio: "Dr. Ramana Vinjamuri's pioneering research in neuroscience and brain-computer interfaces directly informs our approach to building human-centered AI systems.",
+    links: {
+      linkedin: "https://www.linkedin.com/in/ramana-vinjamuri-529924b/"
+    }
+  },
+];
+
 function TeamMember({ member, index }) {
     return (
       <motion.div
@@ -122,7 +123,7 @@ function TeamMember({ member, index }) {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
         whileHover={{ y: -10, scale: 1.04, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
-        className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+        className={`group w-full p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
       >
         <div
           className="h-full w-full p-8 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
@@ -195,7 +196,7 @@ export default function About() {
           >
             <div className="rounded-[15px] p-10 bg-black/80 backdrop-blur-lg text-center"> 
               <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Our Mission</h1>
-              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">At NexSys, we're committed to revolutionizing the tech industry through innovative AI and SaaS solutions. Our goal is to empower businesses with intelligent, scalable technologies that drive growth and efficiency.</p>
+              <p className="text-base max-w-2xl mx-auto font-medium text-blue-100">we're a human-centric AI-native Studio and your partner for high-speed R&amp;D projects</p>
             </div>
           </motion.div>
 
@@ -217,6 +218,31 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <TeamMember key={member.name} member={member} index={index} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* advisors section */}
+          <motion.div
+            id="advisors"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-4xl font-bold text-center mb-6"
+            >
+              Advisors
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+              {advisors.map((member, index) => (
+                <div key={member.name} className="w-full max-w-sm">
+                  <TeamMember member={member} index={index} />
+                </div>
               ))}
             </div>
           </motion.div>
