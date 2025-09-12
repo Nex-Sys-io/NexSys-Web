@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Chris White",
     role: "Founder & CEO",
     image: "/chriswhite.jpeg",
-    bio: "Old man energy, new-school AI, he brings the gray hair and the tacos",
+    bio: "Old man energy, new-school AI, he brings the gray hair and the tacos.",
     links: {
       github: "https://github.com/ChrisWhiteSr",
       linkedin: "https://www.linkedin.com/in/chris-white-b2370b17/",

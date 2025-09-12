@@ -47,21 +47,22 @@ function ProjectCard({ project, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -10, scale: 1.04, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
-      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+      className={`group p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 h-full`}
     >
       <div
-        className="h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
+        className="h-full w-full rounded-[15px] flex flex-col transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg min-h-[420px]"
       >
-        <div className="relative w-full mb-3 overflow-hidden rounded-t-[15px] bg-black flex items-center justify-center" style={{ height: '6.8rem' }}>
+        <div className="relative w-full mb-4 overflow-hidden rounded-t-[15px] bg-black flex items-center justify-center" style={{ height: '8rem' }}>
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-all duration-300 border-b-4 border-transparent group-hover:border-blue-400 group-hover:shadow-lg relative z-20"
+            className="w-full h-full object-contain transition-all duration-300 border-b-4 border-transparent group-hover:border-blue-400 group-hover:shadow-lg relative z-20"
+            style={{ transform: `scale(${project.logoScale || 1})` }}
           />
         </div>
-        <div className="p-3 pt-1 flex flex-col flex-1">
-          <div className="flex justify-end mb-1">
-            <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold shadow-md transition-all duration-300 ${
+        <div className="p-4 pt-1 flex flex-col flex-1">
+          <div className="flex justify-end mb-2">
+            <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md transition-all duration-300 ${
               project.status === 'Live'
                 ? 'bg-green-500/90 text-white'
                 : project.status === 'Beta'
@@ -71,15 +72,15 @@ function ProjectCard({ project, index }) {
               {project.status}
             </span>
           </div>
-          <h3 className="text-xl font-bold mb-1 text-white">
+          <h3 className="text-xl font-bold mb-3 text-white">
             {project.title}
           </h3>
-          <p className="mb-2 text-sm text-blue-100">
+          <p className="mb-4 text-sm text-blue-100 leading-relaxed flex-1">
             {project.description}
           </p>
-          <div className="flex flex-wrap gap-1 justify-center mb-1">
+          <div className="flex flex-wrap gap-1.5 justify-center mb-4">
             {project.tags.map((tag) => (
-              <span key={tag} className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-sm animate-pulse">
+              <span key={tag} className="px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-sm">
                 {tag}
               </span>
             ))}
@@ -89,7 +90,7 @@ function ProjectCard({ project, index }) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-1 px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
+              className="inline-block mt-auto px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 text-center"
             >
               View Project
             </a>
@@ -119,7 +120,7 @@ export default function Projects() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
             {allProjects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
