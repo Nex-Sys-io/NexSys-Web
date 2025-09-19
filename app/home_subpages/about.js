@@ -123,7 +123,7 @@ function TeamMember({ member, index }) {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
         whileHover={{ y: -10, scale: 1.04, boxShadow: '0 12px 32px 0 rgba(0, 176, 255, 0.18)' }}
-        className={`group w-full p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
+        className={`group w-full h-full p-0.5 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500`}
       >
         <div
           className="h-full w-full p-8 rounded-[15px] flex flex-col items-center text-center transition-colors duration-300 ease-in-out bg-black/80 backdrop-blur-lg"
@@ -238,9 +238,9 @@ export default function About() {
             >
               Advisors
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+            <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-4 md:items-stretch">
               {advisors.map((member, index) => (
-                <div key={member.name} className="w-full max-w-sm">
+                <div key={member.name} className="w-full max-w-sm md:basis-[24rem] md:shrink-0">
                   <TeamMember member={member} index={index} />
                 </div>
               ))}
